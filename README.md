@@ -12,21 +12,22 @@ This app allows users to determine categorical information for various fungi, in
 
 The API I will be using relies on data compiled from MushroomObserver.org. *Mushroom Observer* is a social network of sorts, in which fungi-enthusiasts can upload and tag fungi by image, location, genus, and season. Since its inception in 2006, the site has amassed over 10,000 contributors and over 350,000 posts.
 
-The API can be accesssed ![here] (https://github.com/bechtle/mushroomobser-dataset).
+The API can be accesssed [here](https://github.com/bechtle/mushroomobser-dataset).
 
 Furthermore, the following fungi-focused APIs will be used to supplement the *Mushroom Observer* information:
 
 In addition, the following APIs contain further images and information on toxicity:
 
-⋅⋅* ![The Audubon Society Field Guide to North American Mushrooms] (https://archive.ics.uci.edu/ml/datasets/Mushroom)
-⋅⋅* ![Mushrooms classification - Common genus's images (via Kaggle)] (https://www.kaggle.com/maysee/mushrooms-classification-common-genuss-images)
+* [The Audubon Society Field Guide to North American Mushrooms](https://archive.ics.uci.edu/ml/datasets/Mushroom)
+* [Mushrooms classification - Common genus's images (via Kaggle)](https://www.kaggle.com/maysee/mushrooms-classification-common-genuss-images)
 
-Lastly, in order to display user requested information on a map, the ![Google Maps API] (https://developers.google.com/maps/documentation/javascript/overview) will be used.
+Lastly, in order to display user requested information on a map, the [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview) will be used.
 
 ### Sample JSON:
-```json
 
-From the GitHub repository (https://github.com/bechtle/mushroomobser-dataset):
+From the GitHub [repository](https://github.com/bechtle/mushroomobser-dataset):
+
+```json
 
   {'date': '2006-05-21 07:17:22',
   'gbif_info': {'canonicalName': 'Xerocomells dryophils',
