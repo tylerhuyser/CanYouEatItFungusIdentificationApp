@@ -64,23 +64,22 @@ From the GitHub [repository](https://github.com/bechtle/mushroomobser-dataset):
 ```
 ## Wireframes
 
-Desktop & Mobile wireframes can be accessed ![here] (https://drive.google.com/drive/folders/1YU20tyk7ZQzrnGT69s-Lwx3lxkWDv5LX?usp=sharing).
+Desktop & Mobile wireframes can be accessed [here](https://drive.google.com/drive/folders/1YU20tyk7ZQzrnGT69s-Lwx3lxkWDv5LX?usp=sharing).
 
 
 ### MVP/PostMVP
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
-⋅⋅* Find & use one (1) API
-⋅⋅* Create Input Forms for Users to Request Information (location, date/season, and genus)
-⋅⋅* Build Functionality to Output Requested Information as a **LIST**
-⋅⋅* Craft an Aesthetically-Pleasing & Responsive UI
+* Find & use one (1) API
+* Create Input Forms for Users to Request Information (location, date/season, and genus)
+* Build Functionality to Output Requested Information as a **LIST**
+* Craft an Aesthetically-Pleasing & Responsive UI
 
 #### PostMVP  
 
-⋅⋅* Incorporate Google Maps Functionality
-⋅⋅* Alter Hero Image Randomly using Fungi Image Database API
+* Incorporate Google Maps Functionality
+* Alter Hero Image Randomly using Fungi Image Database API
 
 ## Project Schedule
 
@@ -106,9 +105,12 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Create Form | H | 2hrs| TBD | TBD |
+| Working with First API (List) | H | 8hrs| TBD | TBD |
+| CSS Styling | H | 8hrs| TBD | TBD |
+| Working with Second API (Map) | M | 12hrs| TBD | TBD |
+| Working with Third API (Random Hero Image) | L | 4hrs| TBD | TBD |
+| Total | H | 34hrs| TBD | TBD |
 
 ## Code Snippet
 
