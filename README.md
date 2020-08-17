@@ -94,8 +94,7 @@ Desktop & Mobile wireframes can be accessed [here](https://drive.google.com/driv
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
-
+Priority Matrix can be found [here](https://app.lucidchart.com/invitations/accept/4a879dc7-b84a-40c9-afa8-f46d3adbfb18)
 
 ## Timeframes
 
