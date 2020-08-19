@@ -1,0 +1,126 @@
+* {
+  /* Sets the Font Family for the entire document */
+  font-family: 'Alata', sans-serif;
+  /* Sets the Margin for the entire document */
+  margin: 0px;
+  /* sets the padding for the entire document */
+  padding: 0px;
+  /* sets font color universally */
+  color: white;
+}
+
+header {
+  
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  /* display: flex; */
+  /* z-index: 0; */
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  z-index: -1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/j-v42-bb-beer-01-doodles_1.jpg?bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&q=80&usm=15&vib=3&w=1300&s=5b56f990860fdaf7fe282c298ad7b517');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.hero {
+  /* display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center; */
+  align-items: center;
+  text-align: center;
+  /* z-index: -1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/j-v42-bb-beer-01-doodles_1.jpg?bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&q=80&usm=15&vib=3&w=1300&s=5b56f990860fdaf7fe282c298ad7b517');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; */
+}
+
+.hero-copy {
+  color: white;
+  z-index: 0;
+  margin: 10px;
+}
+
+#title {
+  display: block;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+#subtitle {
+  margin-bottom: 25px;
+}
+
+main {
+  justify-content: space-evenly;
+}
+
+.button {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
+.hero-button, .submit-button {
+  background-color: white;
+  border: 5px solid #8A2BE2;
+  color: #8A2BE2;
+  font-size: 2em;
+  width: 25%;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+form {
+display: flex;
+justify-content: space-evenly;
+margin: 10px;
+z-index: 2;
+}
+
+form input {
+  background-color: white;
+  font-size: 1em;
+  padding: 10px;
+  height: 50px;
+  width: 25%;
+  border: 5px solid #8A2BE2;
+  margin: 10px;
+  z-index: 3;
+}
+
+.submit-button {
+}
+
+footer {
+  /* margin-top: auto; */
+  position: absolute;
+  /* flex: 1; */
+  /* align-self: flex-end; */
+  bottom: 0px;
+  background-color: orange;
+  padding: 15px;
+}
+
+.disclaimer {
+  align-content: bottom;
+}
+
+/* .hidden {
+  visibility: hidden;
+} */
