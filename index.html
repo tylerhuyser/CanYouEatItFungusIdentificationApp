@@ -31,8 +31,8 @@
         </div><br>
 
         <form class="hidden">
-          <input type="text" name="location" placeholder="Location (City, State, and Country)" id="location-search" />
-          <input type="text" name="date" placeholder="Date" id="Date Search" />
+          <input type="text" name="location" placeholder="Location (City, State, Country)" id="location-search" required />
+          <input type="text" name="date" placeholder="Date (MM/DD/YYYY)" id="date-search" required />
           <input type="text" name="genus" placeholder="Species (Optional)" id="species" />
           <button class="submit-button" id="discover-submit">Get Info</button>
         </form>
@@ -46,7 +46,17 @@
       </footer>
 
     </div>
-  
+    <script>
+      function activatePlacesSearch() {
+        let locationOptions = {
+          types: ['(regions)']
+        }
+
+        let locationInput = document.getElementById('location-search')
+        let autocomplete = new google.maps.places.Autocomplete(locationInput, locationOptions);
+      }
+    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-MtWK_PsB_dCNoehPXGUgB3mT-11tGk4&libraries=places&callback=activatePlacesSearch"></script>
 </body>
 
 </html>
