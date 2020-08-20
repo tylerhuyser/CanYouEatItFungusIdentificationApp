@@ -40,22 +40,22 @@ function validateForm(e) {
     document.querySelector('#location-search').focus();
     return false;
   };
-  // Determines if Location Input (specifically Country) is valid.
+  // ^Above: Determines if Location Input (specifically Country) is valid.
 
   if (requestedOberservationDate.length != 10) {
     alert(`Please enter Date in "MM/DD/YYYY" format!`)
     document.querySelector('#date-search').focus();
     return false;
   };
-  // Determines if Date Input is valid
+  // ^Above Determines if Date Input is valid
 
   if (country != "" && country != null && requestedOberservationDate.length == 10) {
     getLocationID(city, state, country, month);
   };
-  // If both Location & Date are valid, activates the getLocationID function.
+  // ^Above: If both Location & Date are valid, activates the getLocationID function.
 }
 
-//Below Function obtains the location IDs.
+//BELOW Function obtains the location IDs.
 async function getLocationID (city, state, country, month) {
 
   try {
@@ -112,28 +112,63 @@ async function getLocationID (city, state, country, month) {
   // ^Above: catches & logs any errors that occur with the request.
 }
 
+// BELOW: Creates the Season by adding and subtracting months from the date of observation
 function seasonString(month) {
-  let beginSeason
-  let endSeason
-  if (month >= 03 && month <= 10) {
-    let beginSeason = month - 2;
-    let endSeason = month + 2;
-  } else if (month == 0) {
-    let beginSeason = 11;
-    let endSeason = month + 2;
-  } else if (month == 1) {
-    let beginSeason = 12;
-    let endSeason = month + 2;
-  } else if (month == 11) {
-    let beginSeason = month - 2;
-    let endSeason = 01;
-  } else if (month == 12) {
-    let beginSeason = month - 2;
-    let endSeason = 02;
-  }
-  let season = `${beginSeason} + "-" ${endSeason}`;
+  
+  let monthInteger = parseInt(month);
+  console.log(monthInteger);
+  // ^Above: remove leading zeros from month string and converts value into an integer
+  
+  let beginSeason = parseInt(month);
+  let endSeason = parseInt(month);
+
+  console.log(beginSeason);
+  console.log(endSeason);
+  // ^Above: parses the two-digit number strings "i.e. 06 or 02" down to single-digits (it removes the leading zeros)
+
+  if (monthInteger >= 3 && monthInteger <= 10) {
+    beginSeason = monthInteger - 2
+    endSeason = monthInteger + 2;
+  } else if (monthInteger == 0) {
+    beginSeason = 11;
+    endSeason = monthInteger + 2;
+  } else if (monthInteger == 1) {
+    beginSeason = 12;
+    endSeason = monthInteger + 2;
+  } else if (monthInteger == 11) {
+    beginSeason = monthInteger - 2;
+    endSeason = 01;
+  } else if (monthInteger == 12) {
+    beginSeason = monthInteger - 2;
+    endSeason = 02;
+  };
+
+  console.log(beginSeason);
+  console.log(endSeason);
+  // ^Above: either adds or subtracts two months from the season begin & end variables. This outputs single-digit variables.
+
+  let beginSeasonString
+  if (beginSeason.length == 1) {
+    beginSeasonString = beginSeason.toString();
+  } else {
+    beginSeasonString = beginSeason.toString();
+  };
+  console.log(beginSeasonString);
+  // ^Above: adds the leading zero back to the single-digit integers.
+
+  let endSeasonString 
+  if (endSeason.length == 1) {
+    endSeasonString = "0" + endSeason.toString()
+  } else {
+    endSeasonString = endSeason.toString();
+  };
+  console.log(endSeason);
+  // ^Above: adds the leading zero back to the single-digit integers.
+
+  let season = `${beginSeasonString}-${endSeasonString}`;
   console.log(season);
   return season;
+  // ^Above: converts the season beginning & endpoints to a string
 }
 
 // BELOW function will obtain neccessary Mushroom Info (i.e. species name + image) to later append to DOM
@@ -151,6 +186,8 @@ async function getMushroomInfo(locationIDsString, month) {
   let responseData = response.data.results
   console.log(responseData)
   // ^Above: Defines response results as responseData
+
+  
 
 }
 
