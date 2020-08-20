@@ -223,16 +223,16 @@ async function getMushroomInfo(locationIDsString, month) {
       let resultsHeader = document.createElement('h2')
       resultsHeader.classList.add('results')
       resultsHeader.id = 'results-header'
-      h2.innerHTML = `No Matches :(`
+      resultsHeader.innerHTML = `No Matches :(`
       document.querySelector('.mushroom-list').append('resultsHeader')
       // ^Above Creates an element in the DOM that states that there are no results
 
-    } else if (responseData.length >= 0) {
+    } else if (responseData.length > 0) {
       
       let resultsHeader = document.createElement('h2')
       resultsHeader.classList.add('results')
       resultsHeader.id = 'results-header'
-      h2.innerHTML = `Potential Matches`
+      resultsHeader.innerHTML = `Potential Matches`
       document.querySelector('.mushroom-list').append('resultsHeader')
       // ^Above creates a header for the results and appends it to the "mushroom-list" div within the DOM.
 
@@ -270,16 +270,17 @@ function appendInfo(observationID, mushroomName, mushroomImageID) {
 
   const mushroomHeader = document.createElement('a');
   let linkText = document.createTextNode(`${mushroomName}`);
-  a.appendChild(linkText);
-  a.title = `${mushroomName}`
+  mushroomHeader.appendChild(linkText);
+  mushroomHeader.title = `${mushroomName}`
   let observationURL = `https://mushroomobserver.org/${observationID}`
-  a.href = `${observationURL}`
+  mushroomHeader.href = `${observationURL}`
+  document.querySelector('result').append(mushroomHeader)
   // ^Above: Creates an 'a' hyperlink element containing Mushroom Name and linking to the Observation Page on Mushroom World using the observation ID.
 
   const mushroomImage = document.createElement('img')
   let imageURL = `https://images.mushroomobserver.org/320/${mushroomImageID}.jpg`
-  img.src = imageURL
-  document.querySelector('result').append(img)
+  mushroomImage.src = imageURL
+  document.querySelector('result').append(mushroomImage)
 }
 
 
