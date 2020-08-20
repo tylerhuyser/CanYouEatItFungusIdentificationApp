@@ -55,6 +55,12 @@ function validateForm(e) {
   // ^Above: If both Location & Date are valid, activates the getLocationID function.
 }
 
+
+
+// --------------------------------------------------------------------------------------------------------
+
+
+
 //BELOW Function obtains the location IDs.
 async function getLocationID (city, state, country, month) {
 
@@ -112,6 +118,12 @@ async function getLocationID (city, state, country, month) {
   // ^Above: catches & logs any errors that occur with the request.
 }
 
+
+
+// --------------------------------------------------------------------------------------------------------
+
+
+
 // BELOW: Creates the Season by adding and subtracting months from the date of observation
 function seasonString(month) {
   
@@ -129,10 +141,10 @@ function seasonString(month) {
   if (monthInteger >= 3 && monthInteger <= 10) {
     beginSeason = monthInteger - 2
     endSeason = monthInteger + 2;
-  } else if (monthInteger == 0) {
+  } else if (monthInteger == 1) {
     beginSeason = 11;
     endSeason = monthInteger + 2;
-  } else if (monthInteger == 1) {
+  } else if (monthInteger == 2) {
     beginSeason = 12;
     endSeason = monthInteger + 2;
   } else if (monthInteger == 11) {
@@ -162,7 +174,7 @@ function seasonString(month) {
   } else {
     endSeasonString = endSeason.toString();
   };
-  console.log(endSeason);
+  console.log(endSeasonString);
   // ^Above: adds the leading zero back to the single-digit integers.
 
   let season = `${beginSeasonString}-${endSeasonString}`;
@@ -171,41 +183,107 @@ function seasonString(month) {
   // ^Above: converts the season beginning & endpoints to a string
 }
 
+
+
+// --------------------------------------------------------------------------------------------------------
+
+
+
 // BELOW function will obtain neccessary Mushroom Info (i.e. species name + image) to later append to DOM
 async function getMushroomInfo(locationIDsString, month) {
   
   let dateRange = seasonString(month)
+  // ^ Above: Call upon the "SeasonString" function to produce a range of months to insert into the API URL. It also defines this string as "dateRange".
+
+  let speciesName = document.querySelector(`#species`).value
+  console.log(speciesName)
+  // ^Above defines the optional user input of "Species" as "speciesName" to insert into the API Url
+
+  let URL
+  if (speciesName == "" || speciesName == null) {
+    URL = `https://mushroomobserver.org/api/observations?has_images=true&location=${locationIDsString}&date=${dateRange}&format=json&detail=high`;
+    } else {
+      URL = `https://mushroomobserver.org/api/observations?has_images=true&location=${locationIDsString}&date=${dateRange}&name=${speciesName}&include_subtaxa=true&include_synonyms=true&format=json&detail=high`;
+    }
   
-  let URL = `https://mushroomobserver.org/api/observations?has_images=true&location=${locationIDsString}&date=${dateRange}&format=json&detail=high`
   console.log(URL)
-  // ^Above uses string interpolation to define the URL for the coming axios request.
+  // ^Above uses string interpolation to define the URL for the coming axios request. If a user inputted a species name, it splices that input into the API URL. If not, it only searches with "dateRange" & "locationIDs".
   
-  let response = await axios.get(URL)
-  // ^ Above: Second Axios pull request, using string interpolation to include the array of location IDs and Month to narrow results.
+  try {
+    let response = await axios.get(URL)
+    // ^ Above: Second Axios pull request, using string interpolation to include the array of location IDs and Month to narrow results.
 
-  let responseData = response.data.results
-  console.log(responseData)
-  // ^Above: Defines response results as responseData
+    let responseData = response.data.results
+    console.log(responseData)
+    // ^Above: Defines response results as responseData
 
+    if (responseData.length == 0) {
+        // ^Above: Addresses if there are no results to the input query.
+
+      let resultsHeader = document.createElement('h2')
+      resultsHeader.classList.add('results')
+      resultsHeader.id = 'results-header'
+      h2.innerHTML = `No Matches :(`
+      document.querySelector('.mushroom-list').append('resultsHeader')
+      // ^Above Creates an element in the DOM that states that there are no results
+
+    } else if (responseData.length >= 0) {
+      
+      let resultsHeader = document.createElement('h2')
+      resultsHeader.classList.add('results')
+      resultsHeader.id = 'results-header'
+      h2.innerHTML = `Potential Matches`
+      document.querySelector('.mushroom-list').append('resultsHeader')
+      // ^Above creates a header for the results and appends it to the "mushroom-list" div within the DOM.
+
+      for (let i = 0; i < responseData.length; i++) {
+        // ^Above: Initiates a for loop in order to grab data from all the match result indices.
   
+        let observationID = responseData[i].id
+        let mushroomName = responseData[i].consensus.name
+        let mushroomImageID = responseData[i].images[0].id
+        // ^Above: Defines the oberservation ID, mushroom name, and mushroom image as variables.
+  
+        appendInfo(observationID, mushroomName, mushroomImageID);
+        // ^Above: Initiates the "appendInfo" function to append the above defined variables onto the page.
+      };
+    }
 
+  } catch (error) {
+    console.log(`Error: ${error}`)
+  }
+  // ^Above: Catches & Logs any errors that occur during the request.
 }
 
-// getMushrooms Function
 
-// function getLocation(e) {
-//   e.preventDefault()
-//   // ^ Above: prevents the form from refreshing in the browser.
-//   const requestedMushroomLocation = document.querySelector('#location-search').value
-//   console.log(requestedMushroomLocation)
-//   // ^ Above defines the search location as a string.
-//   const [city, state, country] = requestedMushroomLocation.split(', ')
-//   console.log(city)
-//   console.log(country)
-//   // ^Above defines the location into city, state, and country variables
+// --------------------------------------------------------------------------------------------------------
 
-// }
 
+
+// BELOW: Function appends procurded API information to the page.
+function appendInfo(observationID, mushroomName, mushroomImageID) {
+
+  const result = document.createElement('div')
+  result.classList.add('results')
+  document.querySelector('.mushroom-list').append(result)
+  // ^Above: Creates a div object to contain each result
+
+  const mushroomHeader = document.createElement('a');
+  let linkText = document.createTextNode(`${mushroomName}`);
+  a.appendChild(linkText);
+  a.title = `${mushroomName}`
+  let observationURL = `https://mushroomobserver.org/${observationID}`
+  a.href = `${observationURL}`
+  // ^Above: Creates an 'a' hyperlink element containing Mushroom Name and linking to the Observation Page on Mushroom World using the observation ID.
+
+  const mushroomImage = document.createElement('img')
+  let imageURL = `https://images.mushroomobserver.org/320/${mushroomImageID}.jpg`
+  img.src = imageURL
+  document.querySelector('result').append(img)
+}
+
+
+// --------------------------------------------------------------------------------------------------------
 
 
 
