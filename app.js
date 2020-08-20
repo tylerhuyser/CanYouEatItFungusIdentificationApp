@@ -36,20 +36,38 @@ function validateForm(e) {
   // ^Above: Splits the Date Input into Month, Date, and Year
 
   if (country == "" || country == null) {
+    let locationSearch = document.querySelector('#location-search')
+    locationSearch.classList.add('invalid')
     alert(`Please enter Location in "City, State, Country" format!`)
-    document.querySelector('#location-search').focus();
+    // document.querySelector('#location-search').focus();
     return false;
   };
   // ^Above: Determines if Location Input (specifically Country) is valid.
 
-  if (requestedOberservationDate.length != 10) {
+  if (requestedOberservationDate.length != 10 && country != "" && country != null) {
+    let locationSearch = document.querySelector('#location-search')
+    locationSearch.classList.remove('invalid')
+    let dateSearch = document.querySelector('#date-search')
+    dateSearch.classList.add('invalid')
     alert(`Please enter Date in "MM/DD/YYYY" format!`)
-    document.querySelector('#date-search').focus();
+    // document.querySelector('#date-search').focus();
+    return false;
+  };
+  
+  if (requestedOberservationDate.length != 10) {
+    let dateSearch = document.querySelector('#date-search')
+    dateSearch.classList.add('invalid')
+    alert(`Please enter Date in "MM/DD/YYYY" format!`)
+    // document.querySelector('#date-search').focus();
     return false;
   };
   // ^Above Determines if Date Input is valid
 
   if (country != "" && country != null && requestedOberservationDate.length == 10) {
+    let locationSearch = document.querySelector('#location-search')
+    locationSearch.classList.remove('invalid')
+    let dateSearch = document.querySelector('#date-search')
+    dateSearch.classList.remove('invalid')
     getLocationID(city, state, country, month);
   };
   // ^Above: If both Location & Date are valid, activates the getLocationID function.
@@ -224,7 +242,7 @@ async function getMushroomInfo(locationIDsString, month) {
       resultsHeader.classList.add('results')
       resultsHeader.id = 'results-header'
       resultsHeader.innerHTML = `No Matches :(`
-      document.querySelector('.mushroom-list').append(resultsHeader)
+      document.querySelector('#results-container').append(resultsHeader)
       // ^Above Creates an element in the DOM that states that there are no results
 
     } else if (responseData.length > 0) {
@@ -233,8 +251,14 @@ async function getMushroomInfo(locationIDsString, month) {
       resultsHeader.classList.add('results')
       resultsHeader.id = 'results-header'
       resultsHeader.innerHTML = `Potential Matches`
-      document.querySelector('.mushroom-list').append(resultsHeader)
+      document.querySelector('#results-container').append(resultsHeader)
       // ^Above creates a header for the results and appends it to the "mushroom-list" div within the DOM.
+
+      let mushroomList = document.createElement('div')
+      mushroomList.classList.add('results')
+      mushroomList.id = 'mushroomContainer'
+      document.querySelector('#results-container').append(mushroomList)
+      // ^Above creates a div container for the array of results.
 
       for (let i = 0; i < responseData.length; i++) {
         // ^Above: Initiates a for loop in order to grab data from all the match result indices.
@@ -266,7 +290,8 @@ function appendInfo(observationID, mushroomName, mushroomImageID) {
   const result = document.createElement('div')
   result.classList.add('results')
   result.id = `result`
-  document.querySelector('.mushroom-list').appendChild(result)
+  console.log(result)
+  document.querySelector('#mushroomContainer').appendChild(result)
   // ^Above: Creates a div object to contain each result
 
   const mushroomHeader = document.createElement('a');
@@ -275,13 +300,13 @@ function appendInfo(observationID, mushroomName, mushroomImageID) {
   mushroomHeader.title = `${mushroomName}`
   let observationURL = `https://mushroomobserver.org/${observationID}`
   mushroomHeader.href = `${observationURL}`
-  document.querySelector(`#result`).appendChild(mushroomHeader)
+  result.appendChild(mushroomHeader)
   // ^Above: Creates an 'a' hyperlink element containing Mushroom Name and linking to the Observation Page on Mushroom World using the observation ID.
 
   const mushroomImage = document.createElement('img')
   let imageURL = `https://images.mushroomobserver.org/320/${mushroomImageID}.jpg`
   mushroomImage.src = imageURL
-  document.querySelector(`#result`).appendChild(mushroomImage)
+  result.appendChild(mushroomImage)
   // ^Above: Creates a new image object and directs the image source to a URL composed of the image ID.
 }
 
