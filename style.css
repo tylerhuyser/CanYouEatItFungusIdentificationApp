@@ -118,10 +118,12 @@ form input {
 
 #results-container {
   justify-content: space-evenly;
-  margin: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   flex-direction: row;
   flex-wrap: wrap;
   color: white;
+  max-width: 100vw;
 }
 
 #results-header {
@@ -132,6 +134,27 @@ form input {
 
 #mushroomContainer {
   margin: 25px;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
+
+#result {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    margin: 25px;
+    max-width: 250px;
+}
+
+a {
+  decoration: none;
+  text-align: center;
+  color: white;
 }
 
 footer {
@@ -141,6 +164,7 @@ footer {
   
   /* position: absolute;
   bottom: 0px; */
+  color: white;
   background-color: orange;
   padding: 15px;
 }
