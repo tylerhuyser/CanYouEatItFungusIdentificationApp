@@ -18,6 +18,9 @@ function validateForm(e) {
   e.preventDefault();
   // ^ Above: Prevents the form from refreshing the browser on click.
 
+  let loader = document.querySelector('.loader')
+  // ^ Above: Declares the "loading" graphic for fucntion to display if form input passes validation process.
+  
   let requestedMushroomLocation = document.querySelector('#location-search').value
   console.log(requestedMushroomLocation)
   // ^Above defines the Location Input as requestedMushroomLocation
@@ -258,6 +261,8 @@ function validateForm(e) {
   
     // ^Above: If both Location & Date inputs are valid, activates the loading graphic...
     
+    loader.classList.remove('hidden')
+    // ^Above: Cues the "loading graphic" whle async functions compute results
     
     getLocationID(city, state, country, month);
   };
@@ -415,6 +420,8 @@ async function getMushroomInfo(locationIDsString, month) {
   removeElements();
   // ^Above: evokes the fucntion remove elements to remove any elements appended to the DOM from a previous search.
   
+  let loader = document.querySelector('.loader')
+  
   let dateRange = seasonString(month)
   // ^ Above: Call upon the "SeasonString" function to produce a range of months to insert into the API URL. It also defines this string as "dateRange".
 
@@ -459,6 +466,9 @@ async function getMushroomInfo(locationIDsString, month) {
       document.querySelector('#results-container').append(resultsHeader)
       // ^Above Creates an element in the DOM that states that there are no results
 
+      loader.classList.add('hidden')
+      // ^Above: Removes the loader animation when appending is complete.
+
     } else if (responseData.length > 0) {
       
       let resultsHeader = document.createElement('h2')
@@ -485,12 +495,17 @@ async function getMushroomInfo(locationIDsString, month) {
         appendInfo(observationID, mushroomName, mushroomImageID);
         // ^Above: Initiates the "appendInfo" function to append the above defined variables onto the page.
       };
-        let mushroomResultsComplete = document.querySelector('#mushroomContainer')
+        // let mushroomResultsComplete = document.querySelector('#mushroomContainer')
+        
+      loader.classList.add('hidden')
+      // ^Above: Removes the loader animation when appending is complete.
+
     }
   } catch (error) {
     console.log(`Error: ${error}`)
+    loader.classList.add('hidden')
   }
-  // ^Above: Catches & Logs any errors that occur during the request.
+  // ^Above: Catches & Logs any errors that occur during the request. It also removes the "loader" if an error occurs.
 }
 
 
@@ -568,13 +583,13 @@ submitButton.addEventListener('click', validateForm)
 //   let loader = document.querySelector('.loader')
 //   console.log(loader)
 //   loader.classList.remove('hidden')
-//   console.log(loader)
-//   setTimeout(function (e) {
-//     validateForm();
-//     if (mushroomResultsComplete != null) {
-//       loader.classList.add('hidden');
-//     }
-//   }, 0);
+//   // console.log(loader)
+//   // setTimeout(function (e) {
+//   //   validateForm();
+//   //   if (mushroomResultsComplete != null) {
+//   //     loader.classList.add('hidden');
+//   //   }
+//   // }, 0);
 // })
 
 // ^Above: Initiates the loader graphic when requesting data from API.
