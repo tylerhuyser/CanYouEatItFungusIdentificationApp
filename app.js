@@ -26,11 +26,204 @@ function validateForm(e) {
   console.log(requestedOberservationDate)
   // ^Above defines the Date Input as requestedObservationDate
 
-  const [city, state, country] = requestedMushroomLocation.split(', ')
+  let [city, state, country] = requestedMushroomLocation.split(', ')
   console.log(city)
+  console.log(state)
   console.log(country)
   // ^Above: Splits the Location String into City, State, and Country
 
+    switch (state) {
+          case 'AL':
+              state = "ALABAMA";
+              break;
+          case 'AK':
+              state = "ALASKA";
+              break;
+          case 'AS':
+            state = "AMERICAN SAMOA";
+              break;
+          case 'AZ':
+            state = "ARIZONA";
+              break;
+          case 'AR':
+            state = "ARKANSAS";
+              break;
+           case 'CA':
+            state = "CALIFORNIA";
+              break;
+          case 'CO':
+            state = "COLORADO";
+              break;
+          case 'CT':
+            state = "CONNECTICUT";
+              break;
+          case 'DE':
+            state = "DELAWARE";
+              break;
+          case 'DC':
+            state = "DISTRICT OF COLUMBIA";
+              break;
+          case 'FM':
+            state = "FEDERATED STATES OF MICRONESIA";
+              break;
+          case 'FL':
+            state = "FLORIDA";
+              break;
+          case 'GA':
+            state = "GEORGIA";
+              break;
+          case 'GU':
+            state = "GUAM";
+              break;
+          case 'HI':
+            state = "HAWAII";
+              break;
+          case 'ID':
+            state = "IDAHO";
+              break;
+          case 'IL':
+            state = "ILLINOIS";
+              break;
+          case 'IN':
+            state = "INDIANA";
+              break;
+          case 'IA':
+            state = "IOWA";
+              break;
+          case 'KS':
+            state = "KANSAS";
+              break;
+          case 'KY':
+            state = "KENTUCKY";
+              break;
+          case 'LA':
+            state = "LOUISIANA";
+              break;
+          case 'ME':
+            state = "MAINE";
+              break;
+          case 'MH':
+            state = "MARSHALL ISLANDS";
+              break;
+          case 'MD':
+            state = "MARYLAND";
+              break;
+          case 'MA':
+            state = "MASSACHUSETTS";
+              break;
+          case 'MI':
+            state = "MICHIGAN";
+              break;
+          case 'MN':
+            state = "MINNESOTA";
+              break;
+          case 'MS':
+            state = "MISSISSIPPI";
+              break;
+          case 'MO':
+            state = "MISSOURI";
+              break;
+          case 'MT':
+            state = "MONTANA";
+              break;
+          case 'NE':
+            state = "NEBRASKA";
+              break;
+          case 'NV':
+            state = "NEVADA";
+              break;
+          case 'NH':
+            state = "NEW HAMPSHIRE";
+              break;
+          case 'NJ':
+            state = "NEW JERSEY";
+              break;
+          case 'NM':
+            state = "NEW MEXICO";
+              break;
+          case 'NY':
+            state = "NEW YORK";
+              break;
+          case 'NC':
+            state = "NORTH CAROLINA";
+              break;
+          case 'ND':
+            state = "NORTH DAKOTA";
+              break;
+          case 'MP':
+            state = "NORTHERN MARIANA ISLANDS";
+              break;
+          case 'OH': 
+            state = "OHIO";
+              break;
+          case 'OK':
+            state = "OKLAHOMA";
+              break;
+          case 'OR':
+            state = "OREGON";
+              break;
+          case 'PW':
+            state = "PALAU";
+              break;
+          case 'PA':
+            state = "PENNSYLVANIA";
+              break;
+          case 'PR':
+            state = "PUERTO RICO";
+              break;
+          case 'RI':
+            state = "RHODE ISLAND";
+              break;
+          case 'SC':
+            state = "SOUTH CAROLINA";
+              break;
+          case 'SD':
+            state = "SOUTH DAKOTA";
+              break;
+          case 'TN':
+            state = "TENNESSEE";
+              break;
+          case 'TX':
+            state = "TEXAS";
+              break;
+          case 'UT':
+            state = "UTAH";
+              break;
+          case 'VT':
+            state = "VERMONT";
+              break;
+          case 'VI':
+            state = "VIRGIN ISLANDS";
+              break;
+          case 'VA':
+            state = "VIRGINIA";
+              break;
+          case 'WA':
+            state = "WASHINGTON";
+              break;
+          case 'WV':
+            state = "WEST VIRGINIA";
+              break;
+          case 'WI':
+            state = "WISCONSIN";
+              break;
+          case 'WY':
+            state = "WYOMING";
+            break;
+          default:
+            state = `${state}`
+    }
+
+  console.log(state)
+
+  // ^Above: Switch statement converts abberviated state names to full-spelling. Borrowed code for State Abbreviations from: https://stackoverflow.com/questions/3925195/making-state-abbreviations-from-state-names
+
+  state = state.toLowerCase();
+  console.log(state)
+  // ^Above: 
+
+
+  
   const [month, date, year] = requestedOberservationDate.split('/');
   console.log(month)
   // ^Above: Splits the Date Input into Month, Date, and Year
@@ -210,6 +403,9 @@ function seasonString(month) {
 // BELOW function will obtain neccessary Mushroom Info (i.e. species name + image) to later append to DOM
 async function getMushroomInfo(locationIDsString, month) {
   
+  removeElements();
+  // ^Above: evokes the fucntion remove elements to remove any elements appended to the DOM from a previous search.
+  
   let dateRange = seasonString(month)
   // ^ Above: Call upon the "SeasonString" function to produce a range of months to insert into the API URL. It also defines this string as "dateRange".
 
@@ -309,6 +505,20 @@ function appendInfo(observationID, mushroomName, mushroomImageID) {
   result.appendChild(mushroomImage)
   // ^Above: Creates a new image object and directs the image source to a URL composed of the image ID.
 }
+
+
+
+// --------------------------------------------------------------------------------------------------------
+
+
+
+function removeElements() {
+  let oldSelection = document.querySelector('#results-container')
+  while (oldSelection.lastChild) {
+    oldSelection.removeChild(oldSelection.lastChild)
+  }
+}
+
 
 
 // --------------------------------------------------------------------------------------------------------
