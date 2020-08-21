@@ -569,7 +569,7 @@ submitButton.addEventListener('click', (e) => {
   console.log(loader)
   loader.classList.remove('hidden')
   console.log(loader)
-  setTimeout(function () {
+  setTimeout(function (e) {
     validateForm(e);
     loader.classList.add('hidden')
   }, 0);
