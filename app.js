@@ -485,8 +485,8 @@ async function getMushroomInfo(locationIDsString, month) {
         appendInfo(observationID, mushroomName, mushroomImageID);
         // ^Above: Initiates the "appendInfo" function to append the above defined variables onto the page.
       };
+        let mushroomResultsComplete = document.querySelector('#mushroomContainer')
     }
-
   } catch (error) {
     console.log(`Error: ${error}`)
   }
@@ -564,15 +564,17 @@ submitButton.addEventListener('click', validateForm)
 
 // --------------------------------------------------------------------------------------------------------
 
-submitButton.addEventListener('click', (e) => {
-  let loader = document.querySelector('.loader')
-  console.log(loader)
-  loader.classList.remove('hidden')
-  console.log(loader)
-  setTimeout(function (e) {
-    validateForm(e);
-    loader.classList.add('hidden')
-  }, 0);
-})
+// submitButton.addEventListener('click', (e) => {
+//   let loader = document.querySelector('.loader')
+//   console.log(loader)
+//   loader.classList.remove('hidden')
+//   console.log(loader)
+//   setTimeout(function (e) {
+//     validateForm();
+//     if (mushroomResultsComplete != null) {
+//       loader.classList.add('hidden');
+//     }
+//   }, 0);
+// })
 
 // ^Above: Initiates the loader graphic when requesting data from API.
