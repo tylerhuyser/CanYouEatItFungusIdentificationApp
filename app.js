@@ -34,194 +34,188 @@ function validateForm(e) {
 
     switch (state) {
           case 'AL':
-              state = "ALABAMA";
+              state = "Alabama";
               break;
           case 'AK':
-              state = "ALASKA";
+              state = "Alaska";
               break;
           case 'AS':
-            state = "AMERICAN SAMOA";
+            state = "American Samoa";
               break;
           case 'AZ':
-            state = "ARIZONA";
+            state = "Arizona";
               break;
           case 'AR':
-            state = "ARKANSAS";
+            state = "Arkansas";
               break;
            case 'CA':
-            state = "CALIFORNIA";
+            state = "California";
               break;
           case 'CO':
-            state = "COLORADO";
+            state = "Colorado";
               break;
           case 'CT':
-            state = "CONNECTICUT";
+            state = "Connecticut";
               break;
           case 'DE':
-            state = "DELAWARE";
+            state = "Delaware";
               break;
           case 'DC':
-            state = "DISTRICT OF COLUMBIA";
+            state = "District of Coumbia";
               break;
           case 'FM':
-            state = "FEDERATED STATES OF MICRONESIA";
+            state = "Federated States of Micronesia";
               break;
           case 'FL':
-            state = "FLORIDA";
+            state = "Flordia";
               break;
           case 'GA':
-            state = "GEORGIA";
+            state = "Georgia";
               break;
           case 'GU':
-            state = "GUAM";
+            state = "Guam";
               break;
           case 'HI':
-            state = "HAWAII";
+            state = "Hawaii";
               break;
           case 'ID':
-            state = "IDAHO";
+            state = "Idaho";
               break;
           case 'IL':
-            state = "ILLINOIS";
+            state = "Illinois";
               break;
           case 'IN':
-            state = "INDIANA";
+            state = "Indiana";
               break;
           case 'IA':
-            state = "IOWA";
+            state = "Iowa";
               break;
           case 'KS':
-            state = "KANSAS";
+            state = "Kansas";
               break;
           case 'KY':
-            state = "KENTUCKY";
+            state = "Kentucky";
               break;
           case 'LA':
-            state = "LOUISIANA";
+            state = "Louisiana";
               break;
           case 'ME':
-            state = "MAINE";
+            state = "Maine";
               break;
           case 'MH':
-            state = "MARSHALL ISLANDS";
+            state = "Marshall Islands";
               break;
           case 'MD':
-            state = "MARYLAND";
+            state = "Maryland";
               break;
           case 'MA':
-            state = "MASSACHUSETTS";
+            state = "Massachusetts";
               break;
           case 'MI':
-            state = "MICHIGAN";
+            state = "Michigan";
               break;
           case 'MN':
-            state = "MINNESOTA";
+            state = "Minnesota";
               break;
           case 'MS':
-            state = "MISSISSIPPI";
+            state = "Mississippi";
               break;
           case 'MO':
             state = "MISSOURI";
               break;
           case 'MT':
-            state = "MONTANA";
+            state = "Montana";
               break;
           case 'NE':
-            state = "NEBRASKA";
+            state = "Nebraska";
               break;
           case 'NV':
-            state = "NEVADA";
+            state = "Nevada";
               break;
           case 'NH':
-            state = "NEW HAMPSHIRE";
+            state = "New Hampshire";
               break;
           case 'NJ':
-            state = "NEW JERSEY";
+            state = "New Jersey";
               break;
           case 'NM':
-            state = "NEW MEXICO";
+            state = "New Mexico";
               break;
           case 'NY':
-            state = "NEW YORK";
+            state = "New York";
               break;
           case 'NC':
-            state = "NORTH CAROLINA";
+            state = "North Carolina";
               break;
           case 'ND':
-            state = "NORTH DAKOTA";
+            state = "North Dakota";
               break;
           case 'MP':
-            state = "NORTHERN MARIANA ISLANDS";
+            state = "Northern Mariana Islands";
               break;
           case 'OH': 
-            state = "OHIO";
+            state = "Ohio";
               break;
           case 'OK':
-            state = "OKLAHOMA";
+            state = "Oklahoma";
               break;
           case 'OR':
-            state = "OREGON";
+            state = "Oregon";
               break;
           case 'PW':
-            state = "PALAU";
+            state = "Palau";
               break;
           case 'PA':
-            state = "PENNSYLVANIA";
+            state = "Pennsylvania";
               break;
           case 'PR':
-            state = "PUERTO RICO";
+            state = "Puerto Rico";
               break;
           case 'RI':
-            state = "RHODE ISLAND";
+            state = "Rhode Island";
               break;
           case 'SC':
-            state = "SOUTH CAROLINA";
+            state = "South Carolina";
               break;
           case 'SD':
-            state = "SOUTH DAKOTA";
+            state = "South Dakota";
               break;
           case 'TN':
-            state = "TENNESSEE";
+            state = "Tennessee";
               break;
           case 'TX':
-            state = "TEXAS";
+            state = "Texas";
               break;
           case 'UT':
-            state = "UTAH";
+            state = "Utah";
               break;
           case 'VT':
-            state = "VERMONT";
+            state = "Vermont";
               break;
           case 'VI':
-            state = "VIRGIN ISLANDS";
+            state = "Virgin Islands";
               break;
           case 'VA':
-            state = "VIRGINIA";
+            state = "Virginia";
               break;
           case 'WA':
-            state = "WASHINGTON";
+            state = "Washington";
               break;
           case 'WV':
-            state = "WEST VIRGINIA";
+            state = "West Virginia";
               break;
           case 'WI':
-            state = "WISCONSIN";
+            state = "Wisconsin";
               break;
           case 'WY':
-            state = "WYOMING";
+            state = "Wyoming";
             break;
           default:
             state = `${state}`
     }
 
   console.log(state)
-
   // ^Above: Switch statement converts abberviated state names to full-spelling. Borrowed code for State Abbreviations from: https://stackoverflow.com/questions/3925195/making-state-abbreviations-from-state-names
-
-  state = state.toLowerCase();
-  console.log(state)
-  // ^Above: 
-
 
   
   const [month, date, year] = requestedOberservationDate.split('/');
