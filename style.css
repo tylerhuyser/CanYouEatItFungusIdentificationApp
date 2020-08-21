@@ -8,6 +8,25 @@
   /* sets font color universally */
 }
 
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #8A2BE2; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  margin-top: 30%;
+  animation: spin 2s linear infinite;
+  z-index: 4;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ^ Above: Loader CSS Code comes from W3 Schools: https://www.w3schools.com/howto/howto_css_loader.asp */
+
 body {
   margin: 0px;
   padding: 0px;
@@ -192,9 +211,9 @@ footer {
   align-content: bottom;
 }
 
-/* .hidden {
+.hidden {
   visibility: hidden;
-} */
+}
 
 @media only screen and (max-width: 600px) {
   .hero-button, .submit-button {

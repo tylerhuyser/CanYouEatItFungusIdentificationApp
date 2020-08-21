@@ -255,9 +255,13 @@ function validateForm(e) {
     locationSearch.classList.remove('invalid')
     let dateSearch = document.querySelector('#date-search')
     dateSearch.classList.remove('invalid')
+  
+    // ^Above: If both Location & Date inputs are valid, activates the loading graphic...
+    
+    
     getLocationID(city, state, country, month);
   };
-  // ^Above: If both Location & Date are valid, activates the getLocationID function.
+  // ^Above: ...and initiates the getLocationID function.
 }
 
 
@@ -267,7 +271,18 @@ function validateForm(e) {
 
 
 //BELOW Function obtains the location IDs.
-async function getLocationID (city, state, country, month) {
+async function getLocationID(city, state, country, month) {
+  
+  // submitButton.addEventListener('click', () => {
+  //   let loader = document.querySelector('.loader')
+  //   console.log(loader)
+  //   loader.classList.remove('hidden')
+  //   console.log(loader)
+  //   setTimeout(function () {
+  //     validateForm(e);
+  //     loader.classList.add('hidden')
+  //   }, 0);
+  // })
 
   try {
     const proxyURL = 'https://cors-anywhere.herokuapp.com/';
@@ -545,3 +560,19 @@ submitButton.addEventListener('click', validateForm)
 
 // }
 
+
+
+// --------------------------------------------------------------------------------------------------------
+
+submitButton.addEventListener('click', (e) => {
+  let loader = document.querySelector('.loader')
+  console.log(loader)
+  loader.classList.remove('hidden')
+  console.log(loader)
+  setTimeout(function () {
+    validateForm(e);
+    loader.classList.add('hidden')
+  }, 0);
+})
+
+// ^Above: Initiates the loader graphic when requesting data from API.
