@@ -406,13 +406,6 @@ async function getMushroomInfo(locationIDsString, month) {
   let speciesName = document.querySelector(`#species`).value
   console.log(speciesName)
   // ^Above defines the optional user input of "Species" as "speciesName" to insert into the API Url
-
-  // let URL
-  // if (speciesName == "" || speciesName == null) {
-  //   URL = `https://mushroomobserver.org/api/observations?has_images=true&location=${locationIDsString}&date=${dateRange}&format=json&detail=high`;
-  //   } else {
-  //     URL = `https://mushroomobserver.org/api/observations?has_images=true&location=${locationIDsString}&date=${dateRange}&name=${speciesName}&include_subtaxa=true&include_synonyms=true&format=json&detail=high`;
-  // }
   
   let URL = `https://mushroomobserver.org/api/observations?has_images=true&location=${locationIDsString}&date=${dateRange}&format=json&detail=high`;
   
@@ -432,13 +425,14 @@ async function getMushroomInfo(locationIDsString, month) {
       console.log(responseData)
     } else {
       for (let i = responseData.length - 1; i >= 0; i--) {
-        if (responseData[i].consensus.name != `${speciesName}`) {
+        if (responseData[i].consensus.name.includes(`${speciesName}`) == false) {
           responseData.splice(i, 1);
         };
       };
     };
 
     console.log(responseData);
+    // ^ As the "species" input parameter cannot be parsed via URL, the above if/else statement removes any indices from the array that do not match the species name.
 
     if (responseData.length == 0) {
         // ^Above: Addresses if there are no results to the input query.
