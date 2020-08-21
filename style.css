@@ -187,6 +187,7 @@ form input {
     width: 340px;
     background-color: white;
     border-radius: 12px;
+    border: 5px solid #8A2BE2;
 }
 
 #result a {
