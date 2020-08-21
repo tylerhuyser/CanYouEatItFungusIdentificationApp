@@ -407,12 +407,14 @@ async function getMushroomInfo(locationIDsString, month) {
   console.log(speciesName)
   // ^Above defines the optional user input of "Species" as "speciesName" to insert into the API Url
 
-  let URL
-  if (speciesName == "" || speciesName == null) {
-    URL = `https://mushroomobserver.org/api/observations?has_images=true&location=${locationIDsString}&date=${dateRange}&format=json&detail=high`;
-    } else {
-      URL = `https://mushroomobserver.org/api/observations?has_images=true&location=${locationIDsString}&date=${dateRange}&name=${speciesName}&include_subtaxa=true&include_synonyms=true&format=json&detail=high`;
-    }
+  // let URL
+  // if (speciesName == "" || speciesName == null) {
+  //   URL = `https://mushroomobserver.org/api/observations?has_images=true&location=${locationIDsString}&date=${dateRange}&format=json&detail=high`;
+  //   } else {
+  //     URL = `https://mushroomobserver.org/api/observations?has_images=true&location=${locationIDsString}&date=${dateRange}&name=${speciesName}&include_subtaxa=true&include_synonyms=true&format=json&detail=high`;
+  // }
+  
+  let URL = `https://mushroomobserver.org/api/observations?has_images=true&location=${locationIDsString}&date=${dateRange}&format=json&detail=high`;
   
   console.log(URL)
   // ^Above uses string interpolation to define the URL for the coming axios request. If a user inputted a species name, it splices that input into the API URL. If not, it only searches with "dateRange" & "locationIDs".
@@ -424,6 +426,19 @@ async function getMushroomInfo(locationIDsString, month) {
     let responseData = response.data.results
     console.log(responseData)
     // ^Above: Defines response results as responseData
+
+    
+    if (speciesName == "" || speciesName == null) {
+      console.log(responseData)
+    } else {
+      for (let i = responseData.length - 1; i >= 0; i--) {
+        if (responseData[i].consensus.name != `${speciesName}`) {
+          responseData.splice(i, 1);
+        };
+      };
+    };
+
+    console.log(responseData);
 
     if (responseData.length == 0) {
         // ^Above: Addresses if there are no results to the input query.

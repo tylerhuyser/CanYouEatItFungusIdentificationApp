@@ -79,18 +79,18 @@ Desktop & Mobile wireframes can be accessed [here](https://drive.google.com/driv
 #### PostMVP  
 
 * Incorporate Google Maps Functionality
-* Alter Hero Image Randomly using Fungi Image Database API
+* Creating a toggling "Loading" Element
 
 ## Project Schedule
 
 |  Day | Deliverable | Status
 |---|---| ---|
 |August 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|August 17| Project Approval | Incomplete
-|August 18| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|August 19| Initial Clickable Model  | Incomplete
-|August 20| MVP | Incomplete
-|August 21| Presentations | Incomplete
+|August 17| Project Approval | Complete
+|August 18| Core Application Structure (HTML, CSS, etc.) | Complete
+|August 19| Initial Clickable Model  | Complete
+|August 20| MVP | Complete
+|August 21| Presentations | Complete
 
 ## Priority Matrix
 
@@ -104,10 +104,11 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Create Form | H | 2hrs| TBD | TBD |
-| Working with First API (List) | H | 8hrs| TBD | TBD |
-| CSS Styling | H | 8hrs| TBD | TBD |
-| Working with Second API (Map) | M | 12hrs| TBD | TBD |
+| Create Form | H | 2hrs| 1hr | 1hr |
+| Working with First API (List) | H | 8hrs| 24hrs | 24hrs |
+| JS Functions | H | 8hrs| 10hrs | 10hrs |
+| CSS Styling | H | 8hrs| 8hrs | 8hrs |
+| Working with Second API (Map) | M | 12hrs| 2hrs | 2hrs |
 | Working with Third API (Random Hero Image) | L | 4hrs| TBD | TBD |
 | Total | H | 34hrs| TBD | TBD |
 
