@@ -35,7 +35,7 @@ In future iterations, **CAN YOU EAT IT?**, will enable users to display location
 
 Observation Information:
 
-![Observations JSON](/CanYouEatItFungusIdentificationApp/ReadME_Images/Mushroom_Observer-JSON-Observations.pdf)
+![Observations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/JSON_Screenshots/Mushroom_Observer-JSON-Observations.pdf)
 
 ```json
 
@@ -74,7 +74,7 @@ Observation Information:
 
 Location Information:
 
-![Locations JSON](/CanYouEatItFungusIdentificationApp/ReadME_Images/Mushroom_Observer-JSON-Locations.pdf)
+![Locations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/JSON_Screenshots/Mushroom_Observer-JSON-Locations.pdf)
 
 ```json
 
