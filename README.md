@@ -37,7 +37,7 @@ In future iterations, **CAN YOU EAT IT?**, will enable users to display location
 
 Observation Information:
 
-![Observations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/JSON_Screenshots/Mushroom_Observer-JSON-Observations.png)
+![Observations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/JSON_Screenshots/Observations_JSON_Console.png)
 
 JSON Observations Schema:
 
@@ -72,7 +72,7 @@ create_table "observations", id: :integer, unsigned: true, options: "ENGINE=Inno
 
 Location Information:
 
-![Locations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/JSON_Screenshots/Mushroom_Observer-JSON-Locations.png)
+![Locations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/JSON_Screenshots/Locations_JSON_Console.png)
 
 JSON Locations Schema
 
@@ -104,8 +104,21 @@ create_table "locations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=
 
 ## Wireframes
 
-Desktop & Mobile wireframes can be accessed ![here](https://drive.google.com/drive/folders/1YU20tyk7ZQzrnGT69s-Lwx3lxkWDv5LX?usp=sharing).
+**Desktop Landing Page**
 
+![Desktop Landing Page](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Landing_Page.png)
+
+**Data Validation (Incorrect)**
+
+![Data Validation (Incorrect)](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Data_Validation_Incorrect.png)
+
+**On Hover Interaction**
+
+![On Hover Interactivity](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Hover_Selection.png)
+
+**Results Display**
+
+![Results Display](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Results.png)
 
 ### MVP/PostMVP
 
