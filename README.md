@@ -35,7 +35,7 @@ In future iterations, **CAN YOU EAT IT?**, will enable users to display location
 
 Observation Information:
 
-![Observations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/JSON_Screenshots/Mushroom_Observer-JSON-Observations.pdf)
+![Observations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/JSON_Screenshots/Mushroom_Observer-JSON-Observations.png)
 
 ```json
 
@@ -74,7 +74,7 @@ Observation Information:
 
 Location Information:
 
-![Locations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/JSON_Screenshots/Mushroom_Observer-JSON-Locations.pdf)
+![Locations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/JSON_Screenshots/Mushroom_Observer-JSON-Locations.png)
 
 ```json
 
@@ -88,7 +88,7 @@ Location Information:
 
 ## Wireframes
 
-Desktop & Mobile wireframes can be accessed [here](https://drive.google.com/drive/folders/1YU20tyk7ZQzrnGT69s-Lwx3lxkWDv5LX?usp=sharing).
+Desktop & Mobile wireframes can be accessed ![here](https://drive.google.com/drive/folders/1YU20tyk7ZQzrnGT69s-Lwx3lxkWDv5LX?usp=sharing).
 
 
 ### MVP/PostMVP
@@ -121,12 +121,12 @@ In order for **CAN YOU EAT IT?** to be considered a success, I needed to complet
 
 ## Priority Matrix
 
-Priority Matrix can be found [here](https://app.lucidchart.com/invitations/accept/4a879dc7-b84a-40c9-afa8-f46d3adbfb18)
+Priority Matrix can be found ![here](https://app.lucidchart.com/invitations/accept/4a879dc7-b84a-40c9-afa8-f46d3adbfb18)
 
 ## Timeframes
 
 | Component | Priority | Estimated Time | Time Invested |
-| --- | :---: |  :---: | :---: | :---: |
+| --- | :---: |  :---: | :---: |
 | Mushroom Observer API Pull | H | 8hrs| 20hr | 
 | HTML5 Framework | H | 2hrs| 2hrs |
 | Basic CSS Styling | H | 8hrs| 8hrs |
