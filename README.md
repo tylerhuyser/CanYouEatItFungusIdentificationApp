@@ -2,30 +2,40 @@
 
 ## Project Overview
 
-**CAN YOU EAT IT?** is a tool that helps identify fungi through images & location. 
+**CAN YOU EAT IT?** is a web application that helps users identify local fungi. 
 
 ## Project Description
 
-This app allows users to determine categorical information for various fungi, including toxicity. Users will be able to input their location and retrieve images and names of fungi that 
+We’ve all been there: while on a hike or a stroll, happening upon a cluster of delectable-looking mushrooms. 
+
+Questions race through your mind. What kind of fungi are these? More importantly, are they safe to eat?
+
+Jokes aside, while you may have never ran into this situation before, the above scenario is a common one faced by many foraging hobbyists. 
+
+In fact, amateur foraging has been on the rise in the U.S. for a few years now. And, the trend has only snowballed in the era of COVID-19. [According to Marla Emery](https://www.discovermagazine.com/planet-earth/looking-for-a-new-hobby-urban-foraging-is-making-a-comeback), a research geographer with the USDA Forest Service, “There’s just been an explosion of foraging presence in social media.”
+
+**CAN YOU EAT IT?** is able to help these amateur foraging hobbyists find more information about their discoveries by connecting user-input location, season, and observation information with API data.
+
 
 ## API and Data Sample
 
-The API I will be using relies on data compiled from MushroomObserver.org. *Mushroom Observer* is a social network of sorts, in which fungi-enthusiasts can upload and tag fungi by image, location, genus, and season. Since its inception in 2006, the site has amassed over 10,000 contributors and over 350,000 posts.
+**CAN YOU EAT IT?** pulls data from two API sources: *Mushroom Observer* & Google.
 
-The API can be accesssed [here](https://github.com/bechtle/mushroomobser-dataset).
+[*Mushroom Observer*](mushroomoberver.org), is a social network in which fungi-enthusiasts can upload and tag fungi by image, location, and season. Through a system of analysis, discussion, and voting, users are able to reach a consensus determination of species.
 
-Furthermore, the following fungi-focused APIs will be used to supplement the *Mushroom Observer* information:
+Since its inception in 2006, *Mushroom Observer* has amassed over 10,000 contributors and over 350,000 posts.
 
-In addition, the following APIs contain further images and information on toxicity:
+**CAN YOU EAT IT?** augments *Mushroom Observer*’s trove of user-submitted content with information provided by Google’s sophisticated Maps & Places APIs. Specifically, the Google integration helps users more easily interact with the location information provided by Mushroom Observer. 
 
-* [The Audubon Society Field Guide to North American Mushrooms](https://archive.ics.uci.edu/ml/datasets/Mushroom)
-* [Mushrooms classification - Common genus's images (via Kaggle)](https://www.kaggle.com/maysee/mushrooms-classification-common-genuss-images)
+For example, while inputting location information regarding a current observation, Google-enabled autofill helps point users towards entering information that will be recognized by the API.
 
-Lastly, in order to display user requested information on a map, the [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview) will be used.
+In future iterations, **CAN YOU EAT IT?**, will enable users to display location information on an interactive map.
 
 ### Sample JSON:
 
-From the GitHub [repository](https://github.com/bechtle/mushroomobser-dataset):
+Observation Information:
+
+![Observations JSON](/CanYouEatItFungusIdentificationApp/ReadME_Images/Mushroom_Observer-JSON-Observations.pdf)
 
 ```json
 
@@ -60,8 +70,22 @@ From the GitHub [repository](https://github.com/bechtle/mushroomobser-dataset):
   'thmbnail': 1,
   'user': 1}
 
+```
+
+Location Information:
+
+![Locations JSON](/CanYouEatItFungusIdentificationApp/ReadME_Images/Mushroom_Observer-JSON-Locations.pdf)
+
+```json
+
+
+
+
+
 
 ```
+
+
 ## Wireframes
 
 Desktop & Mobile wireframes can be accessed [here](https://drive.google.com/drive/folders/1YU20tyk7ZQzrnGT69s-Lwx3lxkWDv5LX?usp=sharing).
@@ -71,21 +95,24 @@ Desktop & Mobile wireframes can be accessed [here](https://drive.google.com/driv
 
 #### MVP 
 
-* Find & use one (1) API
-* Create Input Forms for Users to Request Information (location, date/season, and genus)
-* Build Functionality to Output Requested Information as a **LIST**
-* Craft an Aesthetically-Pleasing & Responsive UI
+In order for **CAN YOU EAT IT?** to be considered a success, I needed to complete the following (rank in order of prority):
+
+* Pull data from the *Mushroom Observer* API successfully
+* HTML5 Framework (namely user input form for obsevation location & season)
+* Basic CSS Styling
+* Javascript Functionality (validate user input, pull requested data, append results to page)
 
 #### PostMVP  
 
-* Incorporate Google Maps Functionality
-* Creating a toggling "Loading" Element
+* Advanced CSS Styling (flexbox & interactive input validation)
+* Google API functionality (location autofill)
+* Toggling "Loading" Element (while requested data pulls from Mushroom Observer)
 
 ## Project Schedule
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|August 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
+|August 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
 |August 17| Project Approval | Complete
 |August 18| Core Application Structure (HTML, CSS, etc.) | Complete
 |August 19| Initial Clickable Model  | Complete
@@ -98,19 +125,71 @@ Priority Matrix can be found [here](https://app.lucidchart.com/invitations/accep
 
 ## Timeframes
 
-Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
-
-| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| Component | Priority | Estimated Time | Time Invested |
 | --- | :---: |  :---: | :---: | :---: |
-| Create Form | H | 2hrs| 1hr | 1hr |
-| Working with First API (List) | H | 8hrs| 24hrs | 24hrs |
-| JS Functions | H | 8hrs| 10hrs | 10hrs |
-| CSS Styling | H | 8hrs| 8hrs | 8hrs |
-| Working with Second API (Map) | M | 12hrs| 2hrs | 2hrs |
-| Working with Third API (Random Hero Image) | L | 4hrs| TBD | TBD |
-| Total | H | 34hrs| TBD | TBD |
+| Mushroom Observer API Pull | H | 8hrs| 20hr | 
+| HTML5 Framework | H | 2hrs| 2hrs |
+| Basic CSS Styling | H | 8hrs| 8hrs |
+| JS Functions | H | 15hrs| 15hrs |
+| Advanced CSS Styling | M | 8hrs| TBD |
+| Google API functionality (location autofill) | M | 8hrs| 2 hrs |
+| Toggling "Loading" Element | L | 4hrs| 4 hrs |
+| Total | H | 53hrs| 51hrs |
+
+## Challenges
+
+The Mushroom Observer API posed some unique (and educational) challenges and constraints over the course of this project. 
+
+While the API provided a wealth of information to play with, the organization of this information was unique. By viewing the [API schema](https://github.com/MushroomObserver/mushroom-observer/blob/master/db/schema.rb) (pictured below), you can see that pertinent information for each observation is spread across multiple tables.
+
+Another limitation posed by the API was the no more than twenty (20) pulls-per-minute requirement. Otherwise, the API would lock the user out. 
+
+Thus, the axios requests to pull pertinent information for the user (such as location, image, and species), had to be conducted as efficiently as possible.
+
+From the code snippet included below, you can see that two pull requests were necessary. The first, determined the location IDs associated with the user’s inputted location. Whereas the second obtained matching image IDs, species names, and 
+
+```
+async function getMushroomInfo(locationIDsString, month) {
+  
+  removeElements();
+  // ^Above: evokes the fucntion remove elements to remove any elements appended to the DOM from a previous search.
+  
+  let loader = document.querySelector('.loader')
+  
+  let dateRange = seasonString(month)
+  // ^ Above: Call upon the "SeasonString" function to produce a range of months to insert into the API URL. It also defines this string as "dateRange".
+
+  let speciesName = document.querySelector(`#species`).value
+  console.log(speciesName)
+  // ^Above defines the optional user input of "Species" as "speciesName" to insert into the API Url
+  
+  let URL = `https://mushroomobserver.org/api/observations?has_images=true&location=${locationIDsString}&date=${dateRange}&format=json&detail=high`;
+  
+  console.log(URL)
+  // ^Above uses string interpolation to define the URL for the coming axios request. If a user inputted a species name, it splices that input into the API URL. If not, it only searches with "dateRange" & "locationIDs".
+  
+  try {
+    let response = await axios.get(URL)
+    // ^ Above: Second Axios pull request, using string interpolation to include the array of location IDs and Month to narrow results.
+
+    let responseData = response.data.results
+    console.log(responseData)
+    // ^Above: Defines response results as responseData
+
+    
+    if (speciesName == "" || speciesName == null) {
+      console.log(responseData)
+    } else {
+      for (let i = responseData.length - 1; i >= 0; i--) {
+        if (responseData[i].consensus.name.includes(`${speciesName}`) == false) {
+          responseData.splice(i, 1);
+        };
+      };
+    };
+
+
+```
+
 
 ## Code Snippet
 
