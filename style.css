@@ -238,3 +238,206 @@ footer {
     margin: 10px;
   }
 }
+
+
+@media only screen and (max-width: 375px) {
+  
+  body {
+    margin: 0px;
+    padding: 0px;
+    /* display: flex; */
+    /* z-index: 0; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    justify-content: center;
+    z-index: -1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/j-v42-bb-beer-01-doodles_1.jpg?bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&q=80&usm=15&vib=3&w=1300&s=5b56f990860fdaf7fe282c298ad7b517');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  .empty-space {
+    height: 20vh;
+  }
+  
+  .content {
+    flex: 1 0 auto;
+  }
+  
+  .hero {
+    /* display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center; */
+    align-items: center;
+    text-align: center;
+    /* z-index: -1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/j-v42-bb-beer-01-doodles_1.jpg?bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&q=80&usm=15&vib=3&w=1300&s=5b56f990860fdaf7fe282c298ad7b517');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
+  }
+  
+  .hero-copy {
+    color: white;
+    z-index: 0;
+    margin: 10px;
+  }
+  
+  #title {
+    display: block;
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+  
+  #subtitle {
+    font-size: 0.75em;
+    margin-bottom: 25px;
+  }
+  
+  main {
+    justify-content: space-evenly;
+  }
+  
+  .button {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5px;
+  }
+  
+  .hero-button, .submit-button {
+    background-color: white;
+    border: 5px solid #8A2BE2;
+    color: #8A2BE2;
+    font-size: 0.75em;
+    width: 40%;
+    height: 9%;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 5px;
+  }
+
+  .submit-button {
+    background-color: #8A2BE2;
+    border: 5px solid white;
+    color: white;
+    width: 40%;
+  }
+  
+  .hero-button:hover {
+    background-color: white;
+    border: 5px solid orange;
+    color: orange;
+    font-size: 0.75em;
+    width: 40%;
+    height: 9%;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 12px;
+  }
+  
+  form {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  z-index: 2;
+  }
+  
+  form input {
+    background-color: white;
+    color: gray;
+    font-size: 0.5em;
+    padding: 10px;
+    width: 32%;
+    height: 9%;
+    border: 5px solid #8A2BE2;
+    margin: 5px;
+    z-index: 3;
+  }
+  
+  .invalid {
+    border: 5px solid red;
+  }
+  
+  #results-container {
+    justify-content: space-evenly;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: white;
+    max-width: 100vw;
+  }
+  
+  #results-header {
+    align-content: center;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  #mushroomContainer {
+    margin: 25px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+  }
+  
+  #result {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-content: center;
+      margin: 10px;
+      width: 340px;
+      background-color: white;
+      border-radius: 12px;
+      border: 5px solid #8A2BE2;
+  }
+  
+  #result a {
+    text-decoration: none;
+    text-align: center;
+    color: #8A2BE2;
+    margin: 5px; 
+  }
+  
+  #result img {
+    margin: 10px 10px 30px 10px;
+    z-index: 3;
+  }
+  
+  footer {
+    /* margin-top: auto; */
+     flex-shrink: 0;
+    /* align-self: flex-end; */
+    
+    /* position: absolute;
+    bottom: 0px; */
+    color: white;
+    background-color: orange;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.25em;
+  }
+  
+  .disclaimer {
+    align-content: bottom;
+    font-size: 0.25em;
+  }
+}
