@@ -13,8 +13,8 @@
   margin-top: 50%;
 }
 
-#spinning-wheel {
-  border: 16px solid #f3f3f3; /* Light grey */
+/* #spinning-wheel {
+  border: 16px solid #f3f3f3;
   border-top: 16px solid #8A2BE2;
   border-radius: 50%;
   width: 50px;
@@ -24,28 +24,30 @@
   z-index: 5;
   align-content: center;
   align-items:center;
-}
+  top: -115px;
+  left: -115px;
+} */
 
 .loader img {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   z-index: 4;
   position: absolute;
   align-content: center;
   align-items:center;
   animation: none;
-  top: -50px;
-  left: -50px;
+  top: -160px;
+  left: -180px;
 }
 
 .hidden {
   visibility: hidden;
 }
 
-@keyframes spin {
+/* @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
+} */
 
 /* ^ Above: Loader CSS Code comes from W3 Schools: https://www.w3schools.com/howto/howto_css_loader.asp */
 
@@ -250,6 +252,43 @@ footer {
 
 
 @media only screen and (max-width: 375px) {
+
+  .loader {
+    position: fixed;
+    margin-top: 95%;
+  }
+  
+  /* #spinning-wheel {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #8A2BE2;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    animation: spin 2s linear infinite;
+    z-index: 5;
+    align-content: center;
+    align-items:center;
+    top: -115px;
+    left: -115px;
+  } */
+  
+  .loader img {
+    width: 79px;
+    height: 79px;
+    z-index: 4;
+    position: absolute;
+    align-content: center;
+    align-items:center;
+    animation: none;
+    top: -38px;
+    left: -45px;
+  }
+  
+  .hidden {
+    visibility: hidden;
+  }
+
   
   body {
     margin: 0px;
