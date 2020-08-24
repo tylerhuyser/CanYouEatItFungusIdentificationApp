@@ -9,9 +9,8 @@
 }
 
 .loader {
-  position: absolute;
-  margin-top: 40%;
-  z-index: 4;
+  position: fixed;
+  margin-top: 50%;
 }
 
 #spinning-wheel {
@@ -20,14 +19,23 @@
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  position: absolute;
   animation: spin 2s linear infinite;
+  z-index: 5;
+  align-content: center;
+  align-items:center;
 }
 
 .loader img {
-  width: 100px;
-  height: 100px;
-  z-index: 5;
+  width: 300px;
+  height: 300px;
+  z-index: 4;
+  position: absolute;
+  align-content: center;
+  align-items:center;
   animation: none;
+  top: -50px;
+  left: -50px;
 }
 
 .hidden {
@@ -59,6 +67,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  cursor: pointer;
 }
 
 .empty-space {

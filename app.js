@@ -18,6 +18,8 @@ function validateForm(e) {
   e.preventDefault();
   // ^ Above: Prevents the form from refreshing the browser on click.
 
+  let cursor = document.querySelector('cursor')
+
   let loader = document.querySelector('.loader')
   // ^ Above: Declares the "loading" graphic for fucntion to display if form input passes validation process.
   
@@ -263,6 +265,8 @@ function validateForm(e) {
     
     loader.classList.remove('hidden')
     // ^Above: Cues the "loading graphic" whle async functions compute results
+
+    document.body.style.cursor = 'wait';
     
     getLocationID(city, state, country, month);
   };
@@ -467,6 +471,7 @@ async function getMushroomInfo(locationIDsString, month) {
       // ^Above Creates an element in the DOM that states that there are no results
 
       loader.classList.add('hidden')
+      document.body.style.cursor = 'pointer';
       // ^Above: Removes the loader animation when appending is complete.
 
     } else if (responseData.length > 0) {
@@ -498,12 +503,14 @@ async function getMushroomInfo(locationIDsString, month) {
         // let mushroomResultsComplete = document.querySelector('#mushroomContainer')
         
       loader.classList.add('hidden')
+      document.body.style.cursor = 'pointer';
       // ^Above: Removes the loader animation when appending is complete.
 
     }
   } catch (error) {
     console.log(`Error: ${error}`)
     loader.classList.add('hidden')
+    document.body.style.cursor = 'pointer';
   }
   // ^Above: Catches & Logs any errors that occur during the request. It also removes the "loader" if an error occurs.
 }
