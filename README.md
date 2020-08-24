@@ -37,38 +37,32 @@ Observation Information:
 
 ![Observations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/JSON_Screenshots/Mushroom_Observer-JSON-Observations.png)
 
-```json
+```JSON Observations Schema
 
-  {'date': '2006-05-21 07:17:22',
-  'gbif_info': {'canonicalName': 'Xerocomells dryophils',
-    'class': 'Agaricomycetes',
-    'classKey': 186,
-    'confidence': 98,
-    'family': 'Boletaceae',
-    'familyKey': 8789,
-    'gens': 'Xerocomells',
-    'gensKey': 8184844,
-    'kingdom': 'Fngi',
-    'kingdomKey': 5,
-    'matchType': 'EXACT',
-    'order': 'Boletales',
-    'orderKey': 1063,
-    'phylm': 'Basidiomycota',
-    'phylmKey': 34,
-    'rank': 'SPECIES',
-    'scientificName': 'Xerocomells dryophils (Thiers) N. Siegel, C.F. Schwarz & J.L. Frank, 2014',
-    'species': 'Xerocomells dryophils',
-    'speciesKey': 7574003,
-    'stats': 'ACCEPTED',
-    'synonym': False,
-    'sageKey': 7574003},
-  'image_id': 11,
-  'image_rl': 'http://mshroomobserver.org/images/320/11',
-  'label': 'Xerocomells dryophils',
-  'location': 38,
-  'observation': 10,
-  'thmbnail': 1,
-  'user': 1}
+create_table "observations", id: :integer, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.date "when"
+    t.integer "user_id"
+    t.boolean "specimen", default: false, null: false
+    t.text "notes"
+    t.integer "thumb_image_id"
+    t.integer "name_id"
+    t.integer "location_id"
+    t.boolean "is_collection_location", default: true, null: false
+    t.float "vote_cache", default: 0.0
+    t.integer "num_views", default: 0, null: false
+    t.datetime "last_view"
+    t.integer "rss_log_id"
+    t.decimal "lat", precision: 15, scale: 10
+    t.decimal "long", precision: 15, scale: 10
+    t.string "where", limit: 1024
+    t.integer "alt"
+    t.string "lifeform", limit: 1024
+    t.string "text_name", limit: 100
+    t.text "classification"
+    t.boolean "gps_hidden", default: false, null: false
+  end
 
 ```
 
@@ -76,15 +70,31 @@ Location Information:
 
 ![Locations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/JSON_Screenshots/Mushroom_Observer-JSON-Locations.png)
 
-```json
+```JSON Locations Schema
 
-
-
-
-
+create_table "locations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "version"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "user_id"
+    t.integer "description_id"
+    t.integer "rss_log_id"
+    t.integer "num_views", default: 0
+    t.datetime "last_view"
+    t.float "north"
+    t.float "south"
+    t.float "west"
+    t.float "east"
+    t.float "high"
+    t.float "low"
+    t.boolean "ok_for_export", default: true, null: false
+    t.text "notes"
+    t.string "name", limit: 1024
+    t.string "scientific_name", limit: 1024
+    t.boolean "locked", default: false, null: false
+  end
 
 ```
-
 
 ## Wireframes
 
@@ -134,7 +144,7 @@ Priority Matrix can be found ![here](https://app.lucidchart.com/invitations/acce
 | Advanced CSS Styling | M | 8hrs| TBD |
 | Google API functionality (location autofill) | M | 8hrs| 2 hrs |
 | Toggling "Loading" Element | L | 4hrs| 4 hrs |
-| Total | H | 53hrs| 51hrs |
+| Total | N/A | 53hrs| 51hrs |
 
 ## Challenges
 
