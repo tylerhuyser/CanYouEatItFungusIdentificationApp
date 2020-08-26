@@ -136,9 +136,7 @@ create_table "locations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=
 
 **Mobile Results**
 
-<figure align="center">
 <img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Mobile_results_pt.1.png" width="33%" /><img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Mobile_results_pt.2.png" width="33%" /><img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Mobile_results_pt.3.png" width="33%" />
-</figure>
 
 ### MVP/PostMVP
 
