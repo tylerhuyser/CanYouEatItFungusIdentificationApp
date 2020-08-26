@@ -112,14 +112,15 @@ create_table "locations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=
 
 ![Mobile](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Videos/GIF_Mobile.gif)
 
+<figure align="left">
+  <h4><strong>Desktop Landing Page</strong></h4>
+  <img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Landing_Page.png" width="40%">
+</figure>
 
-**Desktop Landing Page**
-
-<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Landing_Page.png" width="40%" align="left">
-
-**Data Validation (Incorrect)**
-
-<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Data_Validation_Incorrect.png" width="40%" align="right">
+<figure align="right">
+  <h4><strong>Data Validation (Incorrect)</strong></h4>
+  <img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Data_Validation_Incorrect.png" width="40%">
+</figure>
 
 **On Hover Interaction**
 
