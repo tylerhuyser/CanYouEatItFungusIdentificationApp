@@ -104,6 +104,15 @@ create_table "locations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=
 
 ## Wireframes
 
+**Desktop**
+
+![Desktop](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Videos/GIF_Desktop.gif)
+
+**Mobile**
+
+![Mobile](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Videos/GIF_Mobile.gif)
+
+
 **Desktop Landing Page**
 
 ![Desktop Landing Page](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Landing_Page.png)
@@ -119,8 +128,6 @@ create_table "locations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=
 **Results Display**
 
 ![Results Display](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Results.png)
-
-
 
 **Mobile Landing Page**
 
