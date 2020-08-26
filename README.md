@@ -108,6 +108,8 @@ create_table "locations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=
 
 ![Desktop](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Videos/GIF_Desktop.gif)
 
+<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Videos/GIF_Desktop.gif" width="40%">
+
 **Mobile**
 
 ![Mobile](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Videos/GIF_Mobile.gif)
