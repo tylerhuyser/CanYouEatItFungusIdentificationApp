@@ -108,8 +108,6 @@ create_table "locations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=
 
 ![Desktop](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Videos/GIF_Desktop.gif)
 
-<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Videos/GIF_Desktop.gif" width="40%">
-
 **Mobile**
 
 ![Mobile](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Videos/GIF_Mobile.gif)
@@ -117,19 +115,19 @@ create_table "locations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=
 
 **Desktop Landing Page**
 
-![Desktop Landing Page](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Landing_Page.png)
+<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Landing_Page.png" width="40%">
 
 **Data Validation (Incorrect)**
 
-![Data Validation (Incorrect)](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Data_Validation_Incorrect.png)
+<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Data_Validation_Incorrect.png)" width="40%">
 
 **On Hover Interaction**
 
-![On Hover Interactivity](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Hover_Selection.png)
+<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Hover_Selection.png" width="40%">
 
 **Results Display**
 
-![Results Display](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Results.png)
+<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Results.png" width="40%">
 
 **Mobile Landing Page**
 
