@@ -196,11 +196,9 @@ The app accepts three inputs in order to help the user identify the fungi in que
 
 **Validation**
 
-After hitting submit, the data undergoes a validation process.
+After hitting submit, the data undergoes a validation process. 
 
-First, the function checks if the location input has been entered in proper "City, State" and Country" format. 
-
-As the API doesn't include state abbreviations, a Switch/Case statement converts abbreviated strings into their elongated spellings (for example, "CA" would be converted to "California").
+First, the function checks if the location input has been entered in proper "City, State" and Country" format. As the API doesn't include state abbreviations, a Switch/Case statement converts abbreviated strings into their elongated spellings (for example, "CA" would be converted to "California").
 
 Next, the function determines whether the date field contains "MM/DD/YYYY" formatting. 
 
@@ -210,19 +208,11 @@ Should the inputs pass both validation tests, a spiffy 'loader' graphic is cued 
 
 **Gathering Location IDs**
 
-The Mushroom Observer API holds a wealth of information, which can act as a double-edged sword.
+The Mushroom Observer API holds a wealth of information, which can act as a double-edged sword. While the information available is quite comprehensive, it also consumes an extensive amount of data & memory.
 
-While the information available is quite comprehensive, it also consumes an extensive amount of data & memory.
+By viewing the [API schema](https://github.com/MushroomObserver/mushroom-observer/blob/master/db/schema.rb), you can see that pertinent information for each observation is spread across multiple tables and codified with a corresponding ID. Thus in order to include all of the user's search parameters, multiple pull requests are required-- the first of which being location.
 
-By viewing the [API schema](https://github.com/MushroomObserver/mushroom-observer/blob/master/db/schema.rb), you can see that pertinent information for each observation is spread across multiple tables and codified with a corresponding ID.
-
-Thus in order to include all of the user's search parameters, multiple pull requests are required-- the first of which being location.
-
-An Axios pull request is made to the "Location" table in which a comprehensive list of locations and their corresponding IDs is located.
-
-Using a for loop, each ID is checked to see if it matches the user's inputted city, state, and country.
-
-If so, the location is stored and passed through as props to the following Get Info function.
+An axios pull request is made to the "Location" table in which a comprehensive list of locations and their corresponding IDs is located. Using a for loop, each ID is checked to see if it matches the user's inputted city, state, and country. If so, the location is stored and passed through as props to the following Get Info function.
 
 **Getting Season**
 
@@ -230,19 +220,11 @@ Running concurrently with the location function is an algorithm that converts th
 
 The average mushroom season runs four (4) to six (6) weeks in length, and Mushroom Observer enables users to search by season via integer ranges (for example, January through March would be 01-03).
 
-To create a season from the user's date input, the month is parsed into two variables. 
-
-A two-month cushion is added to the first variable, representing the season's upper limit, whereas a two-month cuhsion is subtracted from the second variable, representing the season's lower limit. 
-
-The two variables are then joined into one string, stored in a new variable (known as 'season'), and passed as props into the next function.
+To create a season from the user's date input, the month is parsed into two variables. A two-month cushion is added to the first variable, representing the season's upper limit, whereas a two-month cuhsion is subtracted from the second variable, representing the season's lower limit. The two variables are then joined into one string, stored in a new variable (known as 'season'), and passed as props into the next function.
 
 **Getting Mushrom Info**
 
-This is where we get our data. 
-
-A second API call is made to the 'Observations' table, where endpoints containing species name, location ID, and image URL.
-
-The Location ID and season properties are incorporated through string interpolation of the API's URL -- reducing the processing time for the request.
+This is where we get our data. A second API call is made to the 'Observations' table, where endpoints containing species name, location ID, and image URL. The Location ID and season properties are incorporated through string interpolation of the API's URL -- reducing the processing time for the request.
 
 If there are no matches, the function terminates the loader graphic and informs the user that no matches were found.
 
@@ -254,27 +236,23 @@ Using a for loop, a div is created for each result. Each div includes the corres
 
 ## Challenges
 
+**API Calls**
 
 The Mushroom Observer API posed some unique (and educational) challenges and constraints over the course of this project. 
 
 While the API provided a wealth of information to play with, the organization of this information was unique. By viewing the [API schema](https://github.com/MushroomObserver/mushroom-observer/blob/master/db/schema.rb) (pictured below), you can see that pertinent information for each observation is spread across multiple tables.
 
-Another limitation posed by the API was the no more than twenty (20) pulls-per-minute requirement. Otherwise, the API would lock the user out. 
+This issue was exacerbated by the API's twenty (20) pulls-per-minute limitation. If this limit was exceeding, the API would lock the user out.
 
-Thus, the axios requests to pull pertinent information for the user (such as location, image, and species), had to be conducted as efficiently as possible.
+Thus, in order to pull pertinent information for the user (such as location, image, and species), the axios requests had to be conducted as efficiently as possible.
 
-From the code snippet included below, you can see that two pull requests were necessary. The first, determined the location IDs associated with the user’s inputted location. Whereas the second obtained matching image IDs, species names, and 
+From the code snippet below you can see that axios requests were minimzed to two pulls. The first obtained location IDs, which were then string interpolated into the second request so as to obtain the proper endpoints for the necessary information to append to the page.
 
 ```
 async function getMushroomInfo(locationIDsString, month) {
   
   removeElements();
   // ^Above: evokes the fucntion remove elements to remove any elements appended to the DOM from a previous search.
-  
-  let loader = document.querySelector('.loader')
-  
-  let dateRange = seasonString(month)
-  // ^ Above: Call upon the "SeasonString" function to produce a range of months to insert into the API URL. It also defines this string as "dateRange".
 
   let speciesName = document.querySelector(`#species`).value
   console.log(speciesName)
@@ -282,7 +260,6 @@ async function getMushroomInfo(locationIDsString, month) {
   
   let URL = `https://mushroomobserver.org/api/observations?has_images=true&location=${locationIDsString}&date=${dateRange}&format=json&detail=high`;
   
-  console.log(URL)
   // ^Above uses string interpolation to define the URL for the coming axios request. If a user inputted a species name, it splices that input into the API URL. If not, it only searches with "dateRange" & "locationIDs".
   
   try {
@@ -290,12 +267,10 @@ async function getMushroomInfo(locationIDsString, month) {
     // ^ Above: Second Axios pull request, using string interpolation to include the array of location IDs and Month to narrow results.
 
     let responseData = response.data.results
-    console.log(responseData)
     // ^Above: Defines response results as responseData
 
     
     if (speciesName == "" || speciesName == null) {
-      console.log(responseData)
     } else {
       for (let i = responseData.length - 1; i >= 0; i--) {
         if (responseData[i].consensus.name.includes(`${speciesName}`) == false) {
@@ -307,3 +282,64 @@ async function getMushroomInfo(locationIDsString, month) {
 
 ```
 
+**Data Validation**
+
+Another challenge posed by the project lay in obtaining "clean" data from the inputs. The Mushroom Observer API could only recognize data in particular formats (for example, "California" could only be recognized in its elongated spelling, not its abbreviation, "CA"). That being said, the below validation test was used to ensure that the user inputs contained information in proper formatting.
+
+```
+
+  if (country == "" || country == null) {
+    let locationSearch = document.querySelector('#location-search')
+    locationSearch.classList.add('invalid')
+    alert(`Please enter Location in "City, State, Country" format!`)
+    // document.querySelector('#location-search').focus();
+    return false;
+  };
+  // ^Above: Determines if Location Input (specifically Country) is valid.
+
+  if (requestedOberservationDate.length != 10 && country != "" && country != null) {
+    let locationSearch = document.querySelector('#location-search')
+    locationSearch.classList.remove('invalid')
+    let dateSearch = document.querySelector('#date-search')
+    dateSearch.classList.add('invalid')
+    alert(`Please enter Date in "MM/DD/YYYY" format!`)
+    // document.querySelector('#date-search').focus();
+    return false;
+  };
+  
+  if (requestedOberservationDate.length != 10) {
+    let dateSearch = document.querySelector('#date-search')
+    dateSearch.classList.add('invalid')
+    alert(`Please enter Date in "MM/DD/YYYY" format!`)
+    // document.querySelector('#date-search').focus();
+    return false;
+  };
+  // ^Above Determines if Date Input is valid
+
+  if (country != "" && country != null && requestedOberservationDate.length == 10) {
+    let locationSearch = document.querySelector('#location-search')
+    locationSearch.classList.remove('invalid')
+    let dateSearch = document.querySelector('#date-search')
+    dateSearch.classList.remove('invalid')
+  };
+
+```
+
+**Loader**
+
+As aforementioned, the Mushroom Observer API contains a wealth of information, compiled from over (350,000!) user-submitted posts. While the function to locate corresponding information is constructed as efficiently as possible, it still takes quite some time to sift through this enormous amount of data (sometimes taking over 20 seconds to render).
+
+In order to signify to the user that the app is indeed working (i.e. compiling results), a loading graphic was deployed.
+
+The challenge here lay in determining exactly when to toggle the loader on and off. Through trial and error, I determined that the loader should cue when the data validation tests were passed (just before the first axios request is initiated) and should end when either a.) no results are found or b.) when all matching results have appended to the page. 
+
+You can view the code to toggle the loader on and off below:
+
+```
+loader.classList.remove('hidden')
+
+[...]
+
+loader.classList.add('hidden')
+
+```
