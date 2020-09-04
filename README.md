@@ -137,7 +137,7 @@ create_table "locations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=
 **Mobile Results**
 
 <div>
-<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Mobile_results_pt.1.png" width="30%" /><span></span><img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Mobile_results_pt.2.png" width="30%" /> <br>
+<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Mobile_results_pt.1.png" width="30%" align="left" /><img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Mobile_results_pt.2.png" width="30%" align="right" /> <br>
 <img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Mobile_results_pt.3.png" width="30%" />
 </div>
 
