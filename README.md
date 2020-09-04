@@ -188,12 +188,72 @@ Priority Matrix can be found ![here](https://app.lucidchart.com/invitations/acce
 | Toggling "Loading" Element | L | 4hrs| 4 hrs |
 | Total | N/A | 53hrs| 51hrs |
 
-## Functions
+## Functionality
 
+**Data Input**
 
+The app accepts three inputs in order to help the user identify the fungi in question. These inputs are: location &date (required), and genus (optional).
 
+**Validation**
+
+After hitting submit, the data undergoes a validation process.
+
+First, the function checks if the location input has been entered in proper "City, State" and Country" format. 
+
+As the API doesn't include state abbreviations, a Switch/Case statement converts abbreviated strings into their elongated spellings (for example, "CA" would be converted to "California").
+
+Next, the function determines whether the date field contains "MM/DD/YYYY" formatting. 
+
+If either fields are entered incorrectly, the function alerts the user to resubmit the input with proper formatting.
+
+Should the inputs pass both validation tests, a spiffy 'loader' graphic is cued while results are compiled (is there anything spiffier than a mushroom jumping for joy?).
+
+**Gathering Location IDs**
+
+The Mushroom Observer API holds a wealth of information, which can act as a double-edged sword.
+
+While the information available is quite comprehensive, it also consumes an extensive amount of data & memory.
+
+By viewing the [API schema](https://github.com/MushroomObserver/mushroom-observer/blob/master/db/schema.rb), you can see that pertinent information for each observation is spread across multiple tables and codified with a corresponding ID.
+
+Thus in order to include all of the user's search parameters, multiple pull requests are required-- the first of which being location.
+
+An Axios pull request is made to the "Location" table in which a comprehensive list of locations and their corresponding IDs is located.
+
+Using a for loop, each ID is checked to see if it matches the user's inputted city, state, and country.
+
+If so, the location is stored and passed through as props to the following Get Info function.
+
+**Getting Season**
+
+Running concurrently with the location function is an algorithm that converts the user's obervation date into a "season".
+
+The average mushroom season runs four (4) to six (6) weeks in length, and Mushroom Observer enables users to search by season via integer ranges (for example, January through March would be 01-03).
+
+To create a season from the user's date input, the month is parsed into two variables. 
+
+A two-month cushion is added to the first variable, representing the season's upper limit, whereas a two-month cuhsion is subtracted from the second variable, representing the season's lower limit. 
+
+The two variables are then joined into one string, stored in a new variable (known as 'season'), and passed as props into the next function.
+
+**Getting Mushrom Info**
+
+This is where we get our data. 
+
+A second API call is made to the 'Observations' table, where endpoints containing species name, location ID, and image URL.
+
+The Location ID and season properties are incorporated through string interpolation of the API's URL -- reducing the processing time for the request.
+
+If there are no matches, the function terminates the loader graphic and informs the user that no matches were found.
+
+If there are matches, the Observation ID, species name, and image URL are saved in corresponding variables and passed as properties into the appending function (see below).
+
+**Appending Results**
+
+Using a for loop, a div is created for each result. Each div includes the corresponding mushroom's name, a link to its profile on the Mushroom Observer website, and an image.
 
 ## Challenges
+
 
 The Mushroom Observer API posed some unique (and educational) challenges and constraints over the course of this project. 
 
