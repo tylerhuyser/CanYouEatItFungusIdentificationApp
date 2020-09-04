@@ -136,7 +136,12 @@ create_table "locations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=
 
 **Mobile Results**
 
+<div style={{
+  display: "flex",
+  justifyItems: "spaceBetween",
+}}>
 <img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Mobile_results_pt.1.png" width="30%" /><img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Mobile_results_pt.2.png" width="30%" /><img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Mobile_results_pt.3.png" width="30%" />
+</div>
 
 ### MVP/PostMVP
 
@@ -182,6 +187,11 @@ Priority Matrix can be found ![here](https://app.lucidchart.com/invitations/acce
 | Google API functionality (location autofill) | M | 8hrs| 2 hrs |
 | Toggling "Loading" Element | L | 4hrs| 4 hrs |
 | Total | N/A | 53hrs| 51hrs |
+
+## Functions
+
+
+
 
 ## Challenges
 
