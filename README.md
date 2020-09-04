@@ -171,10 +171,6 @@ In order for **CAN YOU EAT IT?** to be considered a success, the app needs to co
 |August 20| MVP | Complete
 |August 21| Presentations | Complete
 
-## Priority Matrix
-
-Priority Matrix can be found ![here](https://app.lucidchart.com/invitations/accept/4a879dc7-b84a-40c9-afa8-f46d3adbfb18)
-
 ## Timeframes
 
 | Component | Priority | Estimated Time | Time Invested |
