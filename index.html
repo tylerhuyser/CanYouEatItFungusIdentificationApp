@@ -8,23 +8,50 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
     </style>
-  <script src="./app.js" defer ></script>
+    <script type="module" src="./app-non-mod.js" defer></script>
+    <script type="module" src="app.js" defer ></script>
   <title>CAN YOU EAT IT? Fungi Identifier</title>
 </head>
 
-<div class="loader hidden">
-  <div id="spinning-wheel"></div>
-  <img src="https://i.pinimg.com/originals/8b/2b/16/8b2b16ccce84bb90cc7281c31810f11e.gif">
+<div id="loader-hidden">
+
+  <img id="loader-graphic-hidden" src="https://georgeedwardsmurray.files.wordpress.com/2019/01/giphy.gif?w=372">
+
 </div>
 
 <body>
 
+  <div class="body-section" id="hero">
 
-  <div class = "empty-space"></div>
+    <div class="hero-copy" id="hero-title">
+      CAN YOU EAT IT?
+    </div>
 
-  <div class = "content">
+    <div class="hero-copy" id="hero-subtitle">Are you a <s>fungi</s> fun-<i>guy</i><br> looking for a fun time?</div>
 
-    <div class="hero">
+    <div class="hero-copy">
+      Need help idenitfying a fungus?<br>
+      We've got you covered.
+    </div>
+
+    <div class="hero-search-module">
+      <input class="hero-search-field" type="text" name="location" placeholder="Location (City, State, Country)" id="location-input" required />
+      <input class="hero-search-field" type="text" name="date" placeholder="Date (MM/DD/YYYY)" id="date-input" required />
+      <input class="hero-search-field" type="text" name="genus" placeholder="Species (Optional)" id="species-input" />
+      <button class="hero-search-field" id="submit-button">Get Info</button>
+    </div>
+
+  </div>
+
+  <div class="body-section" id="results-hidden">
+
+      <div class="results-copy" id="results-title">Potential Matches</div>
+
+  </div>
+
+  <!-- <div class="content">
+
+    <div class="hero-section">
       <div class="hero-copy" id="title">
         <h1>CAN YOU EAT IT?</h1>
       </div>
@@ -50,26 +77,14 @@
 
       </main>
 
-      <div class="results" id="results-container"></div>
+      <div class="results" id="results-container"></div> -->
+
+      <div class="body-section" id="footer">
+        <p id="footer-copy">
+            <b>NOTE:</b> The information contained on this website is purely for educational purposes. Many mushrooms are poisonous. Some are deadly. The responsibility for eating any mushroom or fungus rests with the individual. Never eat any wild mushroom if you are not absolutely sure it is edible.
+        </div>
 
     </div>
-
-      <footer>
-        <p id = disclaimer>
-          ^ Note: The information contained on this website is purely for educational purposes. Many mushrooms are poisonous. Some are deadly. The responsibility for eating any mushroom or fungus rests with the individual. Never eat any wild mushroom if you are not absolutely sure it is edible.
-      </footer>
-
-    <script>
-      function activatePlacesSearch() {
-        let locationOptions = {
-          types: ['(regions)']
-        }
-        let locationInput = document.getElementById('location-search')
-        let autocomplete = new google.maps.places.Autocomplete(locationInput, locationOptions);
-      }
-    </script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR3er7bqZpPlG4WaXFlrGoYujhCTiQgu4&libraries=places&callback=activatePlacesSearch"></script>
-    <!-- // ^Tutorial Documentation: https://www.youtube.com/watch?v=Rpzp0yCAmq4 -->
 </body>
 
 </html>
