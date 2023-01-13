@@ -2,8 +2,6 @@ import toggleLoader from "../DOM-manipulation-functions/toggleLoader.js"
 import removeResults from "../DOM-manipulation-functions/removeResults.js"
 
 export default function createResultCards(resultsContainerID, data, resultsSection) {
-
-  console.log(data)
   
   for (let i = 0; i < data.length; i++) {
 
