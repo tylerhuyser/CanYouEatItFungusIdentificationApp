@@ -12,7 +12,7 @@ export default function validateForm() {
   state = convertStateName(state)
   searchQuery.location = `${city}, ${state}, ${country}`
   
-  searchQuery.date = searchQuery.date.split('/')[0];
+  let month = searchQuery.date.split('/')[0];
 
   if (country == "" || country == null) {
     let locationInput = document.querySelector('#location-input')
@@ -44,6 +44,8 @@ export default function validateForm() {
     locationInput.classList.remove('invalid')
     let dateInput = document.querySelector('#date-input')
     dateInput.classList.remove('invalid')
+
+    searchQuery.date = month
 
     toggleLoader()
     document.body.style.cursor = 'wait';
