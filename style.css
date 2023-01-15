@@ -32,22 +32,24 @@ body {
   
 }
 
-#loader {
+#loader{
   margin: 0px;
   padding: 0px;
   z-index: 99;
-
-  position: absolute;
+  
+  position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
+
   width: 100vw;
   max-width: 100vw;
-  background-color: #8A2BE280;
+  height: 100vh;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  background-color: #8A2BE280;
 
   overflow: hidden;
 }
@@ -524,4 +526,8 @@ body {
 
 #hidden {
   display: none !important;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
