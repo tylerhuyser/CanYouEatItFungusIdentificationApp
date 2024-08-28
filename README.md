@@ -4,6 +4,8 @@
 
 **CAN YOU EAT IT?** is a web application that helps users identify local fungi.
 
+You can access the application [here](https://tylerhuyser.github.io/CanYouEatItFungusIdentificationApp/).
+
 ## Project Description
 
 Have you ever been out on a hike or stroll only to happen upon a cluster of delectable-looking mushrooms? We've all been there.
