@@ -12,7 +12,7 @@ export default function appendResults(data) {
   resultsContainer.id = data.run_date
   resultsSection.element.append(resultsContainer)
 
-  if (data.length.results === 0) {
+  if (data.results.length === 0) {
 
     let noResults = document.createElement('div')
     resultsHeader.classList.add('results-copy')
