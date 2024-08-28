@@ -2,6 +2,8 @@ import appendResults from "../DOM-manipulation-functions/appendResults.js"
 
 export default async function (location, date, species) {
 
+  console.log(location)
+
   let URL = ''
 
   if (species) {
