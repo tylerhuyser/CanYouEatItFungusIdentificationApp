@@ -38,7 +38,7 @@ In future iterations, **CAN YOU EAT IT?** will enable users to display location 
 
 Observation Information:
 
-![Observations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/JSON_Screenshots/Observations_JSON_Console.png)
+![Observations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/images/JSON_Screenshots/Observations_JSON_Console.png)
 
 JSON Observations Schema:
 
@@ -73,7 +73,7 @@ create_table "observations", id: :integer, unsigned: true, options: "ENGINE=Inno
 
 Location Information:
 
-![Locations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/JSON_Screenshots/Locations_JSON_Console.png)
+![Locations JSON](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/images/JSON_Screenshots/Locations_JSON_Console.png)
 
 JSON Locations Schema
 
@@ -107,40 +107,40 @@ create_table "locations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=
 
 **Desktop**
 
-![Desktop](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Videos/GIF_Desktop.gif)
+![Desktop](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/images/Wireframe_Images/Videos/GIF_Desktop.gif)
 
 **Mobile**
 
-![Mobile](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Videos/GIF_Mobile.gif)
+![Mobile](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/images/Wireframe_Images/Videos/GIF_Mobile.gif)
 
 <figure align="left">
   <h4><strong>Desktop Landing Page</strong></h4>
-  <img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Landing_Page.png" width="40%">
+  <img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/images/Wireframe_Images/Desktop_Landing_Page.png" width="40%">
 </figure>
 
 <figure align="right">
   <h4><strong>Data Validation (Incorrect)</strong></h4>
-  <img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Data_Validation_Incorrect.png" width="40%">
+  <img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/images/Wireframe_Images/Desktop_Data_Validation_Incorrect.png" width="40%">
 </figure>
 
 **On Hover Interaction**
 
-<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Hover_Selection.png" width="40%">
+<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/images/Wireframe_Images/Desktop_Hover_Selection.png" width="40%">
 
 **Results Display**
 
-<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Desktop_Results.png" width="40%">
+<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/images/Wireframe_Images/Desktop_Results.png" width="40%">
 
 **Mobile Landing Page**
 
-![Mobile Landing Page](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Mobile_landing_page.png)
+![Mobile Landing Page](https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/images/Wireframe_Images/Mobile_landing_page.png)
 
 **Mobile Results**
 
 <div>
-<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Mobile_results_pt.1.png" width="30%" /> <br>
-<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Mobile_results_pt.2.png" width="30%" /> <br>
-<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/ReadME_Images/Wireframe_Images/Mobile_results_pt.3.png" width="30%" />
+<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/images/Wireframe_Images/Mobile_results_pt.1.png" width="30%" /> <br>
+<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/images/Wireframe_Images/Mobile_results_pt.2.png" width="30%" /> <br>
+<img src="https://github.com/tylerhuyser/CanYouEatItFungusIdentificationApp/blob/master/images/Wireframe_Images/Mobile_results_pt.3.png" width="30%" />
 </div>
 
 ### MVP/PostMVP
