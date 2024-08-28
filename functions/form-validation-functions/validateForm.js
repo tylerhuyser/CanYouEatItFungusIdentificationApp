@@ -10,7 +10,7 @@ export default function validateForm() {
 
   let [city, state, country] = searchQuery.location.split(', ')
   state = convertStateName(state)
-  searchQuery.location = `${city},+${state},+${country}`
+  searchQuery.location = `${state},+${country}`
   
   let month = searchQuery.date.split('/')[0];
 
