@@ -1,5 +1,7 @@
 function toggleLoader() {
 
+  console.log('inside Toggle Loader')
+
   let body = document.body
   let hiddenLoader = document.getElementById("loader-hidden")
   let hiddenLoaderGraphic = document.getElementById("loader-graphic-hidden")
@@ -14,7 +16,7 @@ function toggleLoader() {
 
   } else if (activeLoader) {
 
-    console.log('here')
+    console.log('inside Toggle Loader - Active Loader')
 
     activeLoader.id = "loader-hidden"
     activeLoaderGraphic.id = "loader-graphic-hidden"

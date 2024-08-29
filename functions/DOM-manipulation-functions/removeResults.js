@@ -3,7 +3,8 @@ import toggleResults from '../DOM-manipulation-functions/toggleResults.js'
 
 export default function removeResults(resultsSection) {
 
-  console.log('here 2')
+  console.log('inside remove results')
+
 
   if (resultsSection.status == "active") {
     
