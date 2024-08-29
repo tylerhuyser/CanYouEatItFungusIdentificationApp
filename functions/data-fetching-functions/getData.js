@@ -14,15 +14,15 @@ export default async function (location, date, species) {
 
   console.log(URL)
 
-  // try {
+  try {
     let response = await axios.get(URL)
     console.log(response)
 
     appendResults(response.data)
 
-  // } catch (error) {
-  //   console.log(`Error: ${error}`)
-  //   document.body.style.cursor = 'pointer'
-  // }
+  } catch (error) {
+    console.log(`Error: ${error}`)
+    document.body.style.cursor = 'pointer'
+  }
 
 }
