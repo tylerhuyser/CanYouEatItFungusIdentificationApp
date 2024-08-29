@@ -14,6 +14,8 @@ function toggleLoader() {
 
   } else if (activeLoader) {
 
+    console.log('here')
+
     activeLoader.id = "loader-hidden"
     activeLoaderGraphic.id = "loader-graphic-hidden"
     body.classList.remove('no-scroll')
