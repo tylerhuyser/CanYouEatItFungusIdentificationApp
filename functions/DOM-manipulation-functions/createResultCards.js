@@ -7,10 +7,8 @@ export default function createResultCards(resultsContainerID, data, resultsSecti
   
   for (let i = 0; i < data.length; i++) {
 
-    console.log(data[i])
-    console.log(data[i].id)
-
-    let id = data[i].id
+    // let id = data[i].id
+    let id = i
     let name = data[i].consensus.name
     let imageID = data[i].primary_image.id
 
