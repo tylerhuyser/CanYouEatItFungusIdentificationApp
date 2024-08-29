@@ -4,10 +4,6 @@ import removeResults from "../DOM-manipulation-functions/removeResults.js"
 export default function createResultCards(resultsContainerID, data, resultsSection) {
 
   console.log(data)
-
-  // for (let i = 0; i < data.length; i++) { 
-  //   console.log(data[i].id)
-  // }
   
   for (let i = 0; i < data.length; i++) {
 
