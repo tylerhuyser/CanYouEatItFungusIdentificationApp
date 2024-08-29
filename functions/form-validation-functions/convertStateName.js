@@ -1,5 +1,5 @@
 function convertStateName(state) {
-  console.log(state)
+  // console.log(state)
   switch (state) {
     case 'AL':
       state = "Alabama";
@@ -181,7 +181,7 @@ function convertStateName(state) {
     default:
       state = `${state}`
   }
-  console.log(state)
+  // console.log(state)
   return state
 }
 

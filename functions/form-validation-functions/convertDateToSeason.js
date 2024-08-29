@@ -3,8 +3,8 @@ export default function convertDateToSeason (inputMonth) {
   let beginSeason = parseInt(month)
   let endSeason = parseInt(month)
 
-  console.log(beginSeason)
-  console.log(endSeason)
+  // console.log(beginSeason)
+  // console.log(endSeason)
 
   if (month >= 2 && month <= 11) {
     beginSeason = month - 1
@@ -17,11 +17,11 @@ export default function convertDateToSeason (inputMonth) {
     endSeason = 1
   }
 
-  console.log(beginSeason);
-  console.log(endSeason);
+  // console.log(beginSeason);
+  // console.log(endSeason);
 
   let season = (beginSeason) + '-' + (endSeason)
-  console.log(season)
+  // console.log(season)
   
   return season 
 }

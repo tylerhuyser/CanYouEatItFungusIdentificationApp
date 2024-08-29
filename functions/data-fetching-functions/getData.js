@@ -2,7 +2,7 @@ import appendResults from "../DOM-manipulation-functions/appendResults.js"
 
 export default async function (location, date, species) {
 
-  console.log(location)
+  // console.log(location)
 
   let URL = ''
 
@@ -12,7 +12,7 @@ export default async function (location, date, species) {
     URL = `https://mushroomobserver.org/api2/observations?region=${location}&date=${date}&detail=high`
   }
 
-  console.log(URL)
+  // console.log(URL)
 
   try {
     let response = await axios.get(URL)

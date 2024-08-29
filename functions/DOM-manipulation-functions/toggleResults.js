@@ -1,7 +1,7 @@
 
 export default function toggleResultsSection(resultsSection) {
 
-  console.log('inside toggle results')
+  // console.log('inside toggle results')
 
   if (resultsSection.status == "active") {
 
