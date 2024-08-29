@@ -12,6 +12,8 @@ export default function appendResults(data) {
   resultsContainer.id = data.run_date
   resultsSection.element.append(resultsContainer)
 
+  let abbreviatedData = data.results.slice(0, 10)
+
   if (data.results.length === 0) {
 
     let noResults = document.createElement('div')
@@ -26,7 +28,8 @@ export default function appendResults(data) {
 
   } else {
 
-    createResultCards(data.run_date, data.results.slice(0, 10), resultsSection);
+
+    createResultCards(data.run_date, abbreviatedData, resultsSection);
 
   }
 }
