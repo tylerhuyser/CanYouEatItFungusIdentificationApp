@@ -7,8 +7,7 @@ export default function createResultCards(resultsContainerID, data, resultsSecti
   
   for (let i = 0; i < data.length; i++) {
 
-    // let id = data[i].id
-    let id = i
+    let id = data[i].id
     let name = data[i].consensus.name
     let imageID = data[i].primary_image.id
 
@@ -35,7 +34,7 @@ export default function createResultCards(resultsContainerID, data, resultsSecti
   }
 
   removeResults(resultsSection)
-  toggleLoader()
+  // toggleLoader()
   document.body.style.cursor = 'pointer'
 
 }
