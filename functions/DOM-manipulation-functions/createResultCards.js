@@ -33,12 +33,10 @@ export default function createResultCards(resultsContainerID, data, resultsSecti
 
   // }
 
-  if (resultsSection.id) {
     removeResults(resultsSection)
-  }
-  if (resultsSection.id) {
+
     toggleLoader()
-  }
+
   document.body.style.cursor = 'pointer'
 
 }
