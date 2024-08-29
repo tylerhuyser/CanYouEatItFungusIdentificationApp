@@ -26,7 +26,7 @@ export default function appendResults(data) {
 
   } else {
 
-    createResultCards(data.run_date, data.results, resultsSection);
+    createResultCards(data.run_date, data.results.slice(0, 10), resultsSection);
 
   }
 }
